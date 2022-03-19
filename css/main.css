@@ -1,4 +1,7 @@
 .swiper-container {
     width: 600px;
     height: 100vh;
-  }
+}
+.--dark-blue{
+  background-color: #000A3F;
+}
