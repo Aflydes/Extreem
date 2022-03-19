@@ -3,7 +3,13 @@
   height: 100vh;
   background-color: #000A3F;
 }
-
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-beetwen;
+}
 .swiper-container {
     width: 600px;
     height: 100vh;
