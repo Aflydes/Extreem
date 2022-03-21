@@ -9,10 +9,8 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="assets/swiper/swiper-bundle.min.css">
 
-    <script src="assets/swiper/swiper-bundle.min.js"></script>
-    <script src="js/slider.js"></script>
+    <script src="js/functions.js"></script>
 
     <title>Extreme Крым | Экосистема проектов и сервисов</title>
 </head>
@@ -20,91 +18,103 @@
     <header class="header">
         <div class="header__logo">
           <object data="img/logo.svg" type="image/svg+xml" class="header__logo-image"></object>
+          <p class="logo-title">Extreme
+            Крым</p>
         </div>
         <div class="header__menu">
             <a href="#" class="header__menu-link">контакты</a>
-            <div class="header__burger burger"></div>
+            <div class="header__burger burger">
+              <div class="burger__line burger__line-one"></div>
+              <div class="burger__line burger__line-two"></div>
+              <div class="burger__line burger__line-three"></div>
+            </div>
         </div>
     </header>
     <main class="main-page">
         <aside class="aside-left">
             <div class="aside__content">
-                <nav class="aside__nav swiper__nav">
-                  <a href="#" class="swiper__nav-link">Главная</a>
-                  <a href="#" class="swiper__nav-link">Парк</a>
-                  <a href="#" class="swiper__nav-link">Пляж</a>
-                  <a href="#" class="swiper__nav-link">Глэмпинг</a>
-                  <a href="#" class="swiper__nav-link">Календарь</a>
+                <nav class="aside__nav main-page__nav">
+                  <a href="#" class="main-page__nav-link">Главная</a>
+                  <a href="#" class="main-page__nav-link">Парк</a>
+                  <a href="#" class="main-page_nav-link">Пляж</a>
+                  <a href="#" class="main-page_nav-link">Глэмпинг</a>
+                  <a href="#" class="main-page__nav-link">Календарь</a>
                 </nav>
             </div>
         </aside>
-        <div class="main-page__container swiper-container">
-            <div class="main-page__swiper swiper">
-                <div id="welcome" class="swiper-slide welcome-slide">
-                    <div class="swiper-slide__content">
-                      <h2 class="swiper-slide__heading">Extreme
-                        Крым</h2>
-                      <p class="swiper-slide__text">Экосистема проектов и сервисов, 
-                          для отдыха, развития, развлечений 
-                          и активного образа жизни</p>
-                      <a href="#" class="swiper-slide__button">
-                        <span class="button__body">шоурил</span>
-                      </a>
-                    </div>
-                </div>
+        <div class="main-page__container ">
+              <div id="welcome" class="main-page__slide welcome-slide">
+                  <div class="welcome-slide__content slide__content">
+                    <h2 class="slide__heading">Extreme
+                      Крым</h2>
+                    <p class="slide__text">Экосистема проектов и сервисов, 
+                        для отдыха, развития, развлечений 
+                        и активного образа жизни</p>
+                    <a href="#" class="welcome-slide__button button">
+                      <span class="button__body">шоурил</span>
+                    </a>
+                  </div>
+               </div>
 
-                <div id="park" class="swiper-slide  park-slide">
-                    <div class="swiper-slide__content">
-                      <div class="swiper-slide__image">
+              <div id="park" class="main-page__slide  park-slide">
+                  <div class="park-slide__content slide__content">
+                    <div class="slide__images">
+                      <div class="slide__image">
                         <img src="img/park.png" alt="">
                       </div>
-                      <div class="swiper-slide__bg">
+                      <div class="slide__bg">
                         <img src="img/park-bg.png" alt="">
                       </div>
                     </div>
-                    <div class="swiper-slide__text-block">
-                      
+                    <div class="slide__text-block">
+                      <h2 class="slide__title">Парк</h2>
+                      <p class="slide-text">Лето в году бывает только один раз, и провести его нужно на EXTREME Крым</p>
+                      <p class="slide-text">Парк EXTREME Крым - это место релакса, вдохновения, развития, спорта, здоровья и положительных эмоций</p>
+                      <a href="#" class="park-slide__button button">
+                        <span class="button__body">Перейти</span>
+                      </a>
                     </div>
-                </div>
+                  </div>
+              </div>
 
-                <div id="beach" class="swiper-slide  beach-slide">
-                    <div class="swiper-slide__content">
-                      
-                    </div>
+              <div id="beach" class="main-page-slide  beach-slide">
+                <div class="beach-slide__content slide__content">
+                    
                 </div>
+             </div>
 
-                <div id="glamping" class="swiper-slide  glamping-slide">
-                    <div class="swiper-slide__content">
-                      
-                    </div>
-                </div>
+              <div id="glamping" class="main-page-slide  glamping-slide">
+                  <div class="glamping-slide__content slide__content">
+                    
+                  </div>
+              </div>
 
-                <div id="calendar" class="swiper-slide  calendar-slide">
-                    <div class="swiper-slide__content">
-                      
-                    </div>
-                </div>
-
-            </div>
+              <div id="calendar" class="main-page-slide  calendar-slide">
+                  <div class="calendar-slide__content slide__content">
+                    
+                  </div>
+              </div>
         </div>
     </main>
     <footer class="footer">
-      <div class="footer__img">
-        
+      <div class="footer__mouse">
+        <svg class="mouse-icon" width="10px" height="17px">
+          <use xlink:href=img/icons.svg#mouse></use>
+        </svg>
       </div>
       <div class="footer__socials">
         <a href="#" class="footer__social-link">
-          <svg class="vk-icon">
+          <svg class="vk-icon" width="18px" height="11px">
             <use xlink:href=img/icons.svg#vk-icon></use>
           </svg>
         </a>
         <a href="#" class="footer__social-link">
-          <svg class="inst-icon">
+          <svg class="inst-icon" width="13px" height="13px">
             <use xlink:href="img/icons.svg#inst-icon"></use>
           </svg>
         </a>
         <a href="#" class="footer__social-link">
-          <svg class="fb-icon">
+          <svg class="fb-icon" width="8px" height="14px">
             <use xlink:href="img/icons.svg#fb-icon"></use>
           </svg>
         </a>
