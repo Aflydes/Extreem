@@ -1,9 +1,43 @@
 .mouse-icon{
-    animation: bounce 1.5s infinite linear;
+    animation: mouseBounce 1.5s infinite linear;
 }
 
-@keyframes bounce {
+@keyframes mouseBounce {
     0%   { transform: translateY(0); }
-    50%  { transform: translateY(-6px); }
+    50%  { transform: translateY(-11px); }
     100% { transform: translateY(0); }
+}
+
+.ticker-text{
+    -webkit-animation: ticker 120s infinite linear;
+    -moz-animation: ticker 120s infinite linear;
+    animation: ticker 120s infinite linear;
+}
+@-webkit-keyframes ticker {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+@-moz-keyframes ticker {
+    0% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -moz-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+@keyframes ticker {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
 }
