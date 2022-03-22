@@ -93,6 +93,7 @@ body{
   width: 100%;
   display: flex;
 }
+
 .main-page__nav{
   display: flex;
   flex-direction: row-reverse;
@@ -100,12 +101,20 @@ body{
 }
 .main-page__container{
   padding-left: 16.6%;
+  width: 100%;
 }
+
 /* main-page slide  */
 .main-page__slide{
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
+}
+.slide__content{
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 .slide__images{
   position: relative;
@@ -120,7 +129,6 @@ body{
 }
 .slide__image{
   position: absolute;
-  top: -70px;
   z-index: 2;
 }
 .slide__bg{
@@ -129,20 +137,73 @@ body{
   -o-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
 }
-
+.slide__text-block{
+  max-width: 260px;
+}
+.slide__title{
+  margin-bottom: 20px;
+}
+.slide-text{
+  margin-bottom: 15px;
+}
+.slide__button{
+  margin-top: 10px;
+}
 /*  welcome-slide  */
+.welcome-slide{
+  padding: 0 88px;
+}
+.welcome-slide__content{
+  padding: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
 .welcome-slide .slide__text{
   margin: 25px 0;
   font-weight: 500;
   line-height: 22px;
   white-space: pre-line;
 }
-.welcome-slide{
-  padding: 0 88px;
-}
+
 /*  park slide  */
 .park-slide{
-  padding: 100px;
+  padding: 0 14.5%;
+}
+.park-slide .slide__image{
+  top: -70px;
+}
+/*  beach slide*/
+.beach-slide{
+  padding: 0 16% 0 12%;
+}
+.beach-slide .slide__image{
+  left: 32px;
+}
+.beach-slide .slide__text-block{
+  margin-bottom: 40px;
+}
+/*  glamping slide  */
+.glamping-slide{
+  padding: 0 12.1% 0 11.5%;
+}
+.glamping-slide .slide__image{
+  bottom: 5px;
+    left: 2px;
+}
+.glamping-slide .slide__text-block{
+  max-width: 290px;
+}
+
+/*  calendar slide  */
+.calendar-slide{
+  padding: 0 7.7% 0 12.7%;
+}
+.calendar-slide .slide__image{
+  left: 135px;
+}
+.calendar-slide .slide__text-block{
+  max-width: 344px;
 }
 
 
