@@ -84,7 +84,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 5;
+  z-index: 10;
 }
 .header__logo{
   display: flex;
@@ -103,6 +103,13 @@ body{
   font-size: 10px;
   line-height: 12px;
   text-transform: uppercase
+}
+.header__menu-link:hover{
+  background: linear-gradient(90deg, #C3FD4B 1.69%, #9CEEA1 98.31%);;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
 }
 .burger {
   width: 21px;
@@ -219,6 +226,7 @@ body{
 }
 .slide__text-block{
   max-width: 260px;
+  animation-duration: 3s;
 }
 .slide__title{
   margin-bottom: 20px;
@@ -280,8 +288,8 @@ body{
   padding: 0 12.1% 0 11.5%;
 }
 .glamping-slide .slide__image{
-  bottom: 5px;
-    left: 2px;
+  bottom: 2px;
+  left: 5px;
 }
 .glamping-slide .slide__text-block{
   max-width: 290px;
@@ -309,7 +317,7 @@ body{
   width: 100%;
   display: flex;
   justify-content: space-between;
-  z-index: 5;
+  z-index: 10;
 }
 .footer__mouse{
   padding: 3px;
