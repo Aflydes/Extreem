@@ -7,6 +7,10 @@ let links = document.querySelectorAll('.main-page__nav-link');
     burger = document.querySelector('.burger');
     body = document.querySelector('body');
     clientHeight = document.documentElement.clientHeight;
+    scrollPos = 0;
+
+let slidesArr = document.querySelectorAll('.main-page__slide');
+let currentSlide = slidesArr[0];
 
 window.addEventListener('scroll', function () {
     const wow = new WOW({
@@ -17,6 +21,25 @@ window.addEventListener('scroll', function () {
         live: true
     })
     wow.init();
+
+    slides.forEach(function (slide) {
+        slide.classList.remove('animate__animated');
+    });
+
+   /* let currentScrollPos = window.pageYOffset;
+
+    if (currentScrollPos > scrollPos){
+        if (currentSlide != slidesArr.length - 1){
+            currentSlide = currentSlide.nextElementSibling;
+            currentSlide.scrollIntoView({block: "center", behavior: "smooth"});     
+        }
+    } else {
+        if (currentSlide != slidesArr[0]) {
+            currentSlide = currentSlide.previousElementSibling;
+            currentSlide.scrollIntoView({block: "center", behavior: "smooth"});     
+        }
+    }
+    scrollPos = currentScrollPos;*/
 });
 
 links.forEach(function (link) {
