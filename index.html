@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="css/animation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
+
   <title>Extreme Крым | Экосистема проектов и сервисов</title>
 </head>
 
@@ -30,14 +31,14 @@
         <div class="burger__line burger__line-three"></div>
       </div>
       <div class="burger__menu">
-        <nav class="burger__menu-list">
-          <a href="#" class="burger__menu-link">Главная</a>
-          <a href="#" class="burger__menu-link">Парк</a>
-          <a href="#" class="burger__menu-link">Пляж</a>
-          <a href="#" class="burger__menu-link">Глэмпинг</a>
-          <a href="#" class="burger__menu-link">Календарь событий</a>
-          <a href="#" class="burger__menu-link">Контакты</a>
-        </nav>
+          <ul class="burger__menu-list">
+            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Главная</a></li>
+            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Парк</a></li>
+            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Пляж</a></li>
+            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Глэмпинг</a></li>
+            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Календарь событий</a></li>
+            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Контакты</a></li>
+          </ul>
       </div>
     </div>
   </header>
@@ -46,7 +47,7 @@
     <aside class="aside-left">
       <div class="aside__content">
         <nav class="aside__nav main-page__nav">
-          <a href="#" class="main-page__nav-link">Главная</a>
+          <a href="#welcome" class="main-page__nav-link">Главная</a>
           <a href="#park" class="main-page__nav-link">Парк</a>
           <a href="#beach" class="main-page_nav-link">Пляж</a>
           <a href="#glamping" class="main-page_nav-link">Глэмпинг</a>
@@ -54,8 +55,8 @@
         </nav>
       </div>
     </aside>
-
-    <div class="main-page__container ">
+<div class="swiper">
+    <div class="main-page__container swiper-wrapper">
       <div id="welcome" class="main-page__slide welcome-slide">
         <div class="welcome-slide__content slide__content">
           <h2 class="slide__heading">Extreme
@@ -170,7 +171,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <div class="video">
       <div class="welcome__video-overlay"></div>
       <video class="welcome__video" autoplay muted loop>

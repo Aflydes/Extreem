@@ -4,7 +4,9 @@ let links = document.querySelectorAll('.main-page__nav-link');
     beach = document.querySelector('#beach');
     glamping = document.querySelector('#glamping');
     calendar = document.querySelector('#calendar');
-    scrollHeight = document.documentElement.clientHeight;
+    burger = document.querySelector('.burger');
+    body = document.querySelector('body');
+    clientHeight = document.documentElement.clientHeight;
 
 window.addEventListener('scroll', function () {
     const wow = new WOW({
@@ -25,13 +27,28 @@ links.forEach(function (link) {
 
     });
 });
-document.addEventListener("keydown", function (event) {
-    if (event.code == "ArrowUp"){
-        window.scrollTo(0, -scrollHeight);
-        console.log(1);
+
+function getTopScrollPosition() {
+    return window.pageYOffset;
+}
+
+document.addEventListener("keydown", function(event) {
+    let topScrollPosition = getTopScrollPosition();
+
+    if (event.code === "ArrowUp") {
+        window.scrollBy(topScrollPosition, -clientHeight);
     }
-    if(event.code == "ArrowDown"){
-        window.scrollTo(0, scrollHeight);
-        console.log(2);
+    if (event.code === "ArrowDown") {
+        window.scrollBy(topScrollPosition, clientHeight);
     }
+});
+
+burger.addEventListener('click', () => {
+    document.querySelector('.burger__menu').classList.toggle('active');
+    burger.classList.toggle('active');
+    burger.classList.remove('_lock-animation');
+    body.classList.toggle('lock-scroll');
+    document.querySelectorAll('.burger__menu-item').forEach(function(burgerLink){
+        burgerLink.classList.toggle('animate__animated');
+    });
 });

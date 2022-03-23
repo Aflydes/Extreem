@@ -22,6 +22,10 @@ p,span,a,li{
 body{
   background-color: #000A3F;
 }
+
+.lock-scroll{
+  overflow: hidden;
+}
 .button{
   position: relative;
   width: 122px;
@@ -88,6 +92,7 @@ body{
 }
 .header__logo{
   display: flex;
+  z-index: 10;
 }
 .logo-title{
   margin-left: 3px;
@@ -102,7 +107,8 @@ body{
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;
-  text-transform: uppercase
+  text-transform: uppercase;
+  z-index: 10;
 }
 .header__menu-link:hover{
   background: linear-gradient(90deg, #C3FD4B 1.69%, #9CEEA1 98.31%);;
@@ -115,7 +121,7 @@ body{
   width: 21px;
   height: 12px;
   align-self: center;
-  z-index: 5;
+  z-index: 10;
 }
 .burger__line {
   height: 1px;
@@ -125,6 +131,52 @@ body{
 }
 .burger__line-two{
   margin: 6px 0;
+}
+.burger__menu{
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
+  backdrop-filter: blur(140px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 9;
+}
+.burger__menu.active{
+  display: block;
+  padding-right: 16px;
+}
+.burger__menu-list{
+  counter-reset: num;
+}
+.burger__menu-item{
+  counter-increment: num;
+  text-align: center;
+  margin: 42.5vh 0;
+  position: relative;
+}
+.burger__menu-link{
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 22px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  z-index: 11;
+}
+.burger__menu-link::before{
+  font-weight: 500;
+  letter-spacing: 0;
+  content: counter(num,decimal-leading-zero);
+  position: absolute;
+  bottom: calc(100% + 50px);
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 18px;
+  line-height: 22px;
 }
 .vk-icon, .inst-icon, .fb-icon {
   fill: #D7D7D7;

@@ -46,8 +46,7 @@ html {
 img{
     max-width: 100%;
 }
-img, object, svg, 
-.ticker-text, .button__body{
+* {
     -webkit-touch-callout: none; 
     -webkit-user-select: none;   
     -khtml-user-select: none;   
