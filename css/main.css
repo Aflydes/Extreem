@@ -249,7 +249,7 @@ header>a{
 }
 .welcome__video{
   position: absolute;
-  top: -2px;
+  top: -3px;
   left: -5px;
   height: 100vh;
   z-index: -1;
