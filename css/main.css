@@ -89,6 +89,9 @@ body{
   align-items: center;
   z-index: 10;
 }
+header>a{
+  z-index: 10;
+}
 .header__logo{
   display: flex;
   z-index: 10;
@@ -215,7 +218,7 @@ body{
   transform-origin: top left;
   z-index: 5;
 }
-.aside__nav{
+.slick-dots{
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -229,8 +232,9 @@ body{
   overflow: hidden;
 }
 .main-page__container{
-  padding-left: 16.6%;
   width: 100%;
+  min-height: 100vh;
+  height: 100%;
   z-index: 3;
 }
 .welcome__video-overlay{
@@ -245,15 +249,17 @@ body{
 }
 .welcome__video{
   position: absolute;
-  top: -1px;
+  top: -2px;
   left: -5px;
   height: 100vh;
   z-index: -1;
 }
 /* main-page slide  */
-.main-page__slide{
+.slick-initialized.slick-slider.slick-vertical .main-page__slide.slick-slide{
   position: relative;
-  height: 100vh;
+  margin-left: 16.6%;
+  width: 83.4% !important;
+  height: 100vh !important;
   display: flex;
   align-items: center;
 }
@@ -311,6 +317,7 @@ body{
 
 /*  welcome-slide  */
 .welcome-slide{
+  position: unset !important;
   padding: 0 88px;
 }
 .welcome-slide__content{
@@ -357,7 +364,7 @@ body{
 
 /*  calendar slide  */
 .calendar-slide{
-  padding: 0 7.7% 0 12.7%;
+  padding: 0 7.7% 0 5.9%;
 }
 .calendar-slide .slide__image{
   left: 135px;

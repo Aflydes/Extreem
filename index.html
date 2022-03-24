@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/animation.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+  <link rel="stylesheet" href="assets/slick/slick.css">
 
   <title>Extreme Крым | Экосистема проектов и сервисов</title>
 </head>
@@ -26,7 +26,7 @@
       </div>
     </a>
     <div class="header__menu">
-      <a href="#" class="header__menu-link">контакты</a>
+      <a href="/contacts.html" class="header__menu-link">контакты</a>
       <div class="header__burger burger">
         <div class="burger__line burger__line-one"></div>
         <div class="burger__line burger__line-two"></div>
@@ -39,7 +39,7 @@
             <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Пляж</a></li>
             <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Глэмпинг</a></li>
             <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Календарь событий</a></li>
-            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Контакты</a></li>
+            <li class="burger__menu-item animate__fadeInDown"><a href="/contacts.html" class="burger__menu-link">Контакты</a></li>
           </ul>
       </div>
     </div>
@@ -49,17 +49,18 @@
     <aside class="aside-left">
       <div class="aside__content">
         <nav class="aside__nav main-page__nav">
-          <a href="#welcome" class="main-page__nav-link">Главная</a>
-          <a href="#park" class="main-page__nav-link">Парк</a>
-          <a href="#beach" class="main-page_nav-link">Пляж</a>
-          <a href="#glamping" class="main-page_nav-link">Глэмпинг</a>
-          <a href="#calendar" class="main-page__nav-link">Календарь</a>
         </nav>
       </div>
     </aside>
 
-    <div class="main-page__container swiper-wrapper">
-      <div id="welcome" class="main-page__slide welcome-slide">
+    <div class="main-page__container">
+      <div id="welcome" class="main-page__slide welcome-slide" data-name="Главная">
+        <div class="video">
+          <div class="welcome__video-overlay"></div>
+          <video class="welcome__video" autoplay muted loop>
+            <source src="img/video-bg.mp4" type="video/mp4">
+          </video>
+        </div>
         <div class="welcome-slide__content slide__content">
           <h2 class="slide__heading">Extreme
             Крым</h2>
@@ -72,7 +73,7 @@
         </div>
       </div>
 
-      <div id="park" class="main-page__slide  park-slide">
+      <div id="park" class="main-page__slide  park-slide" data-name="Парк">
         <h1 class="park__ticker ticker"><span class="ticker-text">Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк</span></h1>
         <div class="park-slide__content slide__content">
           <div class="park-slide__images slide__images wow animate__fadeInUp boxHidded">
@@ -96,7 +97,7 @@
         </div>
       </div>
 
-      <div id="beach" class="main-page__slide  beach-slide">
+      <div id="beach" class="main-page__slide  beach-slide" data-name="Пляж">
         <h1 class="beach__ticker ticker"><span class="ticker-text">Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж</span></h1>
         <div class="beach-slide__content slide__content">
           <div class="beach-slide__images slide__images wow animate__fadeInUp boxHidded">
@@ -119,7 +120,7 @@
         </div>
       </div>
 
-      <div id="glamping" class="main-page__slide  glamping-slide">
+      <div id="glamping" class="main-page__slide  glamping-slide" data-name="Глэмпинг"> 
         <h1 class="glamping__ticker ticker"><span class="ticker-text">Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг</span></h1>
         <div class="glamping-slide__content slide__content">
           <div class="glamping-slide__images slide__images wow animate__fadeInUp boxHidded">
@@ -146,7 +147,7 @@
         </div>
       </div>
 
-      <div id="calendar" class="main-page__slide  calendar-slide">
+      <div id="calendar" class="main-page__slide  calendar-slide" data-name="Календарь">
         <h1 class="calendar__ticker ticker"><span class="ticker-text">Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий</span></h1>
         <div class="calendar-slide__content slide__content">
           <div class="calendar-slide__images slide__images wow animate__fadeInUp boxHidded">
@@ -172,13 +173,6 @@
           <div class="slide__bottom-blur"></div>
         </div>
       </div>
-    </div>
-
-    <div class="video">
-      <div class="welcome__video-overlay"></div>
-      <video class="welcome__video" autoplay muted loop>
-        <source src="img/video-bg.mp4" type="video/mp4">
-      </video>
     </div>
 
   </main>
@@ -207,7 +201,9 @@
     </div>
   </footer>
   
-  <script src="js/wow.min.js"></script>
+  <script src="assets/jquery-3.6.0.min.js"></script>
+  <script src="assets/slick/slick.min.js"></script>
+  <script src="js/sliders.js"></script>
   <script src="js/functions.js"></script>
 
 </body>
