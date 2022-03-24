@@ -48,7 +48,6 @@ body{
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 5px;
   filter: blur(6px);
   background: linear-gradient(90deg, #C3FD4A 0%, #9CEEA1 100%);;
 }
@@ -160,11 +159,11 @@ body{
   position: relative;
 }
 .burger__menu-link{
+  position: relative;
   font-weight: 800;
   font-size: 64px;
   line-height: 22px;
   text-transform: uppercase;
-  text-decoration: underline;
   z-index: 11;
 }
 .burger__menu-link::before{
@@ -172,23 +171,32 @@ body{
   letter-spacing: 0;
   content: counter(num,decimal-leading-zero);
   position: absolute;
-  bottom: calc(100% + 50px);
+  bottom: calc(100% + 30px);
   left: 50%;
   transform: translate(-50%);
   font-size: 18px;
   line-height: 22px;
 }
+.burger__menu-link::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background-color: #ffffff;
+}
 .vk-icon, .inst-icon, .fb-icon {
   fill: #D7D7D7;
 }
-.vk-icon:hover{
-  fill:url(../img/icons.svg#g3);
+.vk-icon:hover{ 
+  fill: #00E4E1;
 }
 .inst-icon:hover{
-  fill:url(../img/icons.svg#g2);
+  fill:#AEFF14;
 }
 .fb-icon:hover{
-  fill:url(../img/icons.svg#g1);
+  fill: #EFFF01;
 }
 /*  aside  */
 .aside-left{
