@@ -5,6 +5,7 @@ $('.main-page__container').slick({
     edgeFriction: 0.15,
     arrows: false,
     infinite: false,
+    easing: 'liner',
     dots: true,
     appendDots: '.main-page__nav',
     customPaging: function(slick,index) {
@@ -20,9 +21,9 @@ $('.main-page__container').on('wheel', (function(e) {
       $(this).slick('slickPrev');
     }
   }));
-$('.main-page__container').on('swipe', function(event, slick, direction){
+$('.main-page__container').on('beforeChange', function(event, slick, currentSlide, nextSlide){
     $('.wow').addClass('animate__animated');
 });
-$('.main-page__container').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-    $('.wow').removeClass('animate__animated');
+$('.main-page__container').on('afterChange', function(event, slick, currentSlide, nextSlide){
+  $('.wow').delay(2000).removeClass('animate__animated');
 });
