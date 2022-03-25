@@ -10,7 +10,7 @@ $('.main-page__container').slick({
     appendDots: '.main-page__nav',
     customPaging: function(slick,index) {
         var targetName = slick.$slides.eq(index).data('name');
-        return '<a href="#" class="main-page__nav-link">'+ targetName +'</a>';
+        return '<a href="#" class="main-page__nav-link" data-cursor-sticker><span data-hover="'+ targetName +'">'+ targetName +'</span></a>';
     }
 });
 $('.main-page__container').on('wheel', (function(e) {

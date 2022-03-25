@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+@font-face {
+font-family: "Proxima"; 
+src: url("../css/fonts/Proxima\ Nova.ttf") format("truetype"); 
+font-style: normal; 
+font-weight: normal; 
+} 
 a,
 body,
 div,

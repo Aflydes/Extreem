@@ -67,15 +67,15 @@ body{
   z-index: -1;
 }
 .ticker-text{
-  background: linear-gradient(180deg, #000E5A 0%, rgba(0, 12, 78, 0) 100%);
-  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px #ffffff;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   text-fill-color: transparent;
+  font-family: "Proxima"; 
   display: inline-block;
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit; 
+  opacity: 0.3;
 }
 /*  header  */
 .header{
@@ -219,16 +219,27 @@ header>a{
   transform-origin: top left;
   z-index: 5;
 }
+.screen-nav-marker-track{
+  width: calc(100vh - 256px);
+  height: 8px;
+}
+.screen-nav-marker{
+  background-color: currentColor;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-left: 4px;
+  backface-visibility: hidden;
+  will-change: transform;
+  pointer-events: none;
+}
 .slick-dots{
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-}
-.follower object{
-  position: fixed;
-  right: -40%;
-  top: -128%;
-  transform: rotate(26deg);
 }
 .follower{
   position: absolute;
@@ -236,6 +247,10 @@ header>a{
   height: 150px;
   border-radius: 50%;
   overflow: hidden;
+  background: linear-gradient(10.75deg, #C3FD4B 9.77%, #9CEEA1 87.79%);
+  filter: blur(146px);
+  border-radius: 124.767px;
+  transform: rotate(48.73deg);
 }
 /*  Main  */
 .main-page{
@@ -256,8 +271,7 @@ header>a{
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
-  transform: rotate(180deg);
+  background: linear-gradient(90deg, rgba(0, 10, 63, 0.65) 13.54%, rgba(11, 10, 52, 0) 100%);
   z-index: 1;
 }
 .welcome__video{
@@ -271,6 +285,7 @@ header>a{
 .slick-initialized.slick-slider.slick-vertical .main-page__slide.slick-slide{
   position: relative;
   margin-left: 16.6%;
+  margin-bottom: 100px;
   width: 83.4% !important;
   height: 100vh !important;
   display: flex;
@@ -286,10 +301,12 @@ header>a{
   position: relative;
   max-width: fit-content;
   animation-duration: 2s;
+  transition: opacity 1s ease-out;
 }
 .slide__image{
   position: absolute;
   z-index: 2;
+  transition: opacity 1s ease-out;
 }
 .slide__bg{
   position: relative;
@@ -298,13 +315,20 @@ header>a{
   -o-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
 }
-.slide__images:hover .slide__bg::before{
+.slide__bg::before{
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in;
+  
+}
+.slide__images:hover .slide__bg::before{
+  opacity: 1;
+  transition: opacity 1s ease-out;
 }
 .slide__text-block{
   max-width: 260px;
@@ -317,7 +341,7 @@ header>a{
   margin-bottom: 15px;
 }
 .slide__button{
-  margin-top: 10px;
+  margin-top: 25px;
 }
 .slide__bottom-blur{
   position: absolute;
@@ -341,6 +365,7 @@ header>a{
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  z-index: 3;
 }
 .welcome-slide .slide__text{
   margin: 25px 0;
@@ -369,7 +394,7 @@ header>a{
   padding: 0 16% 0 12%;
 }
 .beach-slide .slide__image{
-  left: 32px;
+  top: -15px;
 }
 .beach-slide .slide__text-block{
   margin-bottom: 60px;
@@ -387,7 +412,7 @@ header>a{
   padding: 0 12.1% 0 11.5%;
 }
 .glamping-slide .slide__image{
-  bottom: 2px;
+  bottom: 1px;
   left: 5px;
 }
 .glamping-slide .slide__text-block{
@@ -407,6 +432,7 @@ header>a{
 }
 .calendar-slide .slide__image{
   left: 135px;
+  top: 30px;
 }
 .calendar-slide .slide__text-block{
   margin-bottom: 80px;
@@ -480,11 +506,27 @@ header>a{
     }
 }
 @media screen and (max-width: 768px){
+  .header{
+    padding: 60px 52px;
+  }
   .ticker{
     transform: rotate(40deg);
   }
+  .slick-initialized.slick-slider.slick-vertical .main-page__slide.slick-slide{
+    width: 100% !important;
+    margin: 0;
+  }
 }
 @media screen and (max-width: 600px){
+  .header{
+    padding: 27px 20px;
+  }
+  .header__menu-link{
+    display: none;
+  }
+  .slick-initialized.slick-slider.slick-vertical .main-page__slide.slick-slide{
+    padding: 0;
+  }
   .slide__content{
     flex-direction: column;
     align-items: flex-start;
