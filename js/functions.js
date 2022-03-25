@@ -17,3 +17,12 @@ burger.addEventListener('click', () => {
         burgerLink.classList.toggle('animate__animated');
     });
 });
+
+/**/
+$( document ).on( "mousemove", function( event ) {
+    let pageX = event.pageX;
+    let pageY = event.pageY;
+    let follower = $(".follower");
+
+    follower.css({left:pageX - 74, top:pageY - 74});    
+});

@@ -124,6 +124,7 @@ header>a{
   height: 12px;
   align-self: center;
   z-index: 10;
+  cursor: pointer;
 }
 .burger__line {
   height: 1px;
@@ -223,7 +224,19 @@ header>a{
   flex-direction: row-reverse;
   justify-content: space-between;
 }
-
+.follower object{
+  position: fixed;
+  right: -40%;
+  top: -128%;
+  transform: rotate(26deg);
+}
+.follower{
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
 /*  Main  */
 .main-page{
   position: relative;
