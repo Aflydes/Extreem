@@ -211,7 +211,7 @@ header>a{
 }
 .aside__content{
   position: absolute;
-  left: calc(100% - 12px);
+  left: calc(100% - 22px);
   bottom: 101px;
   transform: rotate(-90deg);
   width: calc(100vh - 256px);
@@ -219,12 +219,15 @@ header>a{
   transform-origin: top left;
   z-index: 5;
 }
+.aside__nav{
+  margin-top: 10px;
+}
 .screen-nav-marker-track{
   width: calc(100vh - 256px);
   height: 8px;
 }
 .screen-nav-marker{
-  background-color: currentColor;
+  background-color: #ffffff;
   width: 8px;
   height: 8px;
   border-radius: 50%;
