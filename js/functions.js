@@ -59,7 +59,7 @@ $(window).bind('mousewheel', function(event){
             $('#'+ currentSlide).addClass('hidden');
             currentSlide = $('#'+ currentSlide).next().attr('id');
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
-            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
         }  
     }
@@ -68,9 +68,11 @@ $('.main-page__nav-link').click( function(){
     $('#'+ currentSlide).addClass('hidden');
     currentSlide = $(this).attr('data-slide');
     $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__animated')
+    $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').removeClass('animate__fadeOutDown');
+    $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__fadeInUp');
     $('#'+ currentSlide).removeClass('hidden');
     markerPos = $('[data-slide='+ currentSlide +']').position().top;
-    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
     $('.screen-nav-marker').css('right', markerPos+ 'px');
 });
 
