@@ -95,8 +95,8 @@ $('.main-page__nav-link').click( function(){
     markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
     $('.screen-nav-marker').css('right', markerPos+ 'px');
 });
-window.addEventListener("swipe", function(){
-    if(e.detail.dir == "up"){
+$('.main-page').on("swipe", function(){
+    if(direction  == "swipeUp"){
         if (currentSlide != "last"){
             $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).next().removeClass('hidden');
@@ -107,7 +107,7 @@ window.addEventListener("swipe", function(){
             markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
         }  
-    } else if(e.detail.dir == "down") {
+    } else if(direction  == "swipeDown") {
         if (currentSlide != "welcome") {
             $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).addClass('hidden');

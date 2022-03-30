@@ -153,6 +153,7 @@ header>a{
   min-height: 100vh;
   background: linear-gradient(126.6deg, rgba(255, 255, 255, 0.12) 28.69%, rgba(255, 255, 255, 0) 100%);
   backdrop-filter: blur(140px);
+  -webkit-backdrop-filter: blur(140px);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   z-index: 9;
