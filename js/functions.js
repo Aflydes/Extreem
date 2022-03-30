@@ -132,14 +132,6 @@ body.addEventListener('touchend', function (event) {
     if (xAbs > 20 || yAbs > 20) {
         if (xAbs > yAbs) {
             if (finalPoint.pageX < initialPoint.pageX) {
-                /*СВАЙП ВЛЕВО*/
-            }
-            else {
-                /*СВАЙП ВПРАВО*/
-            }
-        }
-        else {
-            if (finalPoint.pageY < initialPoint.pageY) {
                 if (currentSlide != "last"){
                     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
                     $('#'+ currentSlide).next().removeClass('hidden');
@@ -161,7 +153,15 @@ body.addEventListener('touchend', function (event) {
                     markerPos = $('[data-slide='+ currentSlide +']').position().top;
                     markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
                     $('.screen-nav-marker').css('right', markerPos+ 'px');
-                }  
+                } 
+            }
+        }
+        else {
+            if (finalPoint.pageY < initialPoint.pageY) {
+                
+            }
+            else {
+                 
             }
         }
     }
