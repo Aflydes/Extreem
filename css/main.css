@@ -505,7 +505,7 @@ header>a{
 .link>span,
 .animation-inner{
   position: relative;
-  transition: transform 1.7s ease;
+  transition: transform 1.2s ease;
   display: inline-block;
   font-size: inherit;
   font-weight: inherit;
