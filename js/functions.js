@@ -124,13 +124,9 @@ $('.main-page').on("swipe", function(){
 var initialPoint;
 var finalPoint;
 document.addEventListener('touchstart', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
     initialPoint = event.changedTouches[0];
 }, false);
 document.addEventListener('touchend', function (event) {
-    event.preventDefault();
-    event.stopPropagation();
     finalPoint = event.changedTouches[0];
     var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
     var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
