@@ -95,30 +95,79 @@ $('.main-page__nav-link').click( function(){
     markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
     $('.screen-nav-marker').css('right', markerPos+ 'px');
 });
-$('.main-page').swipe({
-    swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
-        if(direction  == "swipeUp"){
-            if (currentSlide != "last"){
-                $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
-                $('#'+ currentSlide).next().removeClass('hidden');
-                $('#'+ currentSlide).addClass('hidden');              
-                currentSlide = $('#'+ currentSlide).next().attr('id');
-                $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
-                markerPos = $('[data-slide='+ currentSlide +']').position().top;
-                markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
-                $('.screen-nav-marker').css('right', markerPos+ 'px');
-            }  
-        } else if(direction  == "swipeDown") {
-            if (currentSlide != "welcome") {
-                $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
-                $('#'+ currentSlide).addClass('hidden');
-                currentSlide = $('#'+ currentSlide).prev().attr('id');
-                $('#'+ currentSlide).removeClass('hidden');
-                $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
-                markerPos = $('[data-slide='+ currentSlide +']').position().top;
-                markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
-                $('.screen-nav-marker').css('right', markerPos+ 'px');
-            }  
-        }
+$('.main-page').on("swipe", function(){
+    if(direction  == "swipeUp"){
+        if (currentSlide != "last"){
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+            $('#'+ currentSlide).next().removeClass('hidden');
+            $('#'+ currentSlide).addClass('hidden');              
+            currentSlide = $('#'+ currentSlide).next().attr('id');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+            markerPos = $('[data-slide='+ currentSlide +']').position().top;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+            $('.screen-nav-marker').css('right', markerPos+ 'px');
+        }  
+    } else if(direction  == "swipeDown") {
+        if (currentSlide != "welcome") {
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+            $('#'+ currentSlide).addClass('hidden');
+            currentSlide = $('#'+ currentSlide).prev().attr('id');
+            $('#'+ currentSlide).removeClass('hidden');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+            markerPos = $('[data-slide='+ currentSlide +']').position().top;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+            $('.screen-nav-marker').css('right', markerPos+ 'px');
+        }  
     }
 });
+
+var initialPoint;
+var finalPoint;
+document.addEventListener('touchstart', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    initialPoint = event.changedTouches[0];
+}, false);
+document.addEventListener('touchend', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+    finalPoint = event.changedTouches[0];
+    var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+    var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+    if (xAbs > 20 || yAbs > 20) {
+        if (xAbs > yAbs) {
+            if (finalPoint.pageX < initialPoint.pageX) {
+                /*СВАЙП ВЛЕВО*/
+            }
+            else {
+                /*СВАЙП ВПРАВО*/
+            }
+        }
+        else {
+            if (finalPoint.pageY < initialPoint.pageY) {
+                if (currentSlide != "last"){
+                    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+                    $('#'+ currentSlide).next().removeClass('hidden');
+                    $('#'+ currentSlide).addClass('hidden');              
+                    currentSlide = $('#'+ currentSlide).next().attr('id');
+                    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+                    markerPos = $('[data-slide='+ currentSlide +']').position().top;
+                    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+                    $('.screen-nav-marker').css('right', markerPos+ 'px');
+                }  
+            }
+            else {
+                if (currentSlide != "welcome") {
+                    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+                    $('#'+ currentSlide).addClass('hidden');
+                    currentSlide = $('#'+ currentSlide).prev().attr('id');
+                    $('#'+ currentSlide).removeClass('hidden');
+                    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+                    markerPos = $('[data-slide='+ currentSlide +']').position().top;
+                    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+                    $('.screen-nav-marker').css('right', markerPos+ 'px');
+                }  
+            }
+        }
+    }
+}, false);
