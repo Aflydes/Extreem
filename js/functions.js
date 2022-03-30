@@ -123,9 +123,13 @@ $('.main-page').on("swipe", function(){
 var initialPoint;
 var finalPoint;
 body.addEventListener('touchstart', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
     initialPoint = event.changedTouches[0];
 }, false);
 body.addEventListener('touchend', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
     finalPoint = event.changedTouches[0];
     var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
     var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
@@ -133,13 +137,19 @@ body.addEventListener('touchend', function (event) {
         if (xAbs > yAbs) {
             if (finalPoint.pageX < initialPoint.pageX) {
                 /*СВАЙП ВЛЕВО*/
+                if (currentSlide != "last"){
+                    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+                    $('#'+ currentSlide).next().removeClass('hidden');
+                    $('#'+ currentSlide).addClass('hidden');              
+                    currentSlide = $('#'+ currentSlide).next().attr('id');
+                    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+                    markerPos = $('[data-slide='+ currentSlide +']').position().top;
+                    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+                    $('.screen-nav-marker').css('right', markerPos+ 'px');
+                } 
             }
             else {
                 /*СВАЙП ВПРАВО*/
-            }
-        }
-        else {
-            if (finalPoint.pageY < initialPoint.pageY) {
                 if (currentSlide != "welcome") {
                     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
                     $('#'+ currentSlide).addClass('hidden');
@@ -151,7 +161,9 @@ body.addEventListener('touchend', function (event) {
                     $('.screen-nav-marker').css('right', markerPos+ 'px');
                 } 
             }
-            else {
+        }
+        else {
+            if (finalPoint.pageY < initialPoint.pageY) {
                 if (currentSlide != "last"){
                     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
                     $('#'+ currentSlide).next().removeClass('hidden');
@@ -162,6 +174,18 @@ body.addEventListener('touchend', function (event) {
                     markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
                     $('.screen-nav-marker').css('right', markerPos+ 'px');
                 }  
+            }
+            else {
+                if (currentSlide != "welcome") {
+                    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+                    $('#'+ currentSlide).addClass('hidden');
+                    currentSlide = $('#'+ currentSlide).prev().attr('id');
+                    $('#'+ currentSlide).removeClass('hidden');
+                    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+                    markerPos = $('[data-slide='+ currentSlide +']').position().top;
+                    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+                    $('.screen-nav-marker').css('right', markerPos+ 'px');
+                } 
             }
         }
     }
