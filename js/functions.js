@@ -35,14 +35,11 @@ var currentSlide = 'welcome';
 $(window).bind('mousewheel', function(event){
     if (event.originalEvent.wheelDelta > 0) { 
         if (currentSlide != "welcome") {
-            $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').removeClass('animate__fadeInUp');
-            $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__fadeOutDown');
-            $('#'+ currentSlide).prev().find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__animated');
-            $('#'+ currentSlide).prev().find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').removeClass('animate__fadeOutDown');
-            $('#'+ currentSlide).prev().find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__fadeInUp');
-            $('#'+ currentSlide).prev().removeClass('hidden');
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).addClass('hidden');
             currentSlide = $('#'+ currentSlide).prev().attr('id');
+            $('#'+ currentSlide).removeClass('hidden');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
             markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
@@ -50,14 +47,37 @@ $(window).bind('mousewheel', function(event){
     }
     else {
         if (currentSlide != "last"){
-            $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').removeClass('animate__fadeInUp');
-            $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__fadeOutDown');
-            $('#'+ currentSlide).next().find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__animated');
-            $('#'+ currentSlide).next().find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').removeClass('animate__fadeOutDown');
-            $('#'+ currentSlide).next().find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__fadeInUp');
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).next().removeClass('hidden');
-            $('#'+ currentSlide).addClass('hidden');
+            $('#'+ currentSlide).addClass('hidden');              
             currentSlide = $('#'+ currentSlide).next().attr('id');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+            markerPos = $('[data-slide='+ currentSlide +']').position().top;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+            $('.screen-nav-marker').css('right', markerPos+ 'px');
+        }  
+    }
+});
+$(window).on("swipe",function(event){
+    if (event.originalEvent.wheelDelta > 0) { 
+        if (currentSlide != "welcome") {
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+            $('#'+ currentSlide).addClass('hidden');
+            currentSlide = $('#'+ currentSlide).prev().attr('id');
+            $('#'+ currentSlide).removeClass('hidden');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+            markerPos = $('[data-slide='+ currentSlide +']').position().top;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+            $('.screen-nav-marker').css('right', markerPos+ 'px');
+        }   
+    }
+    else {
+        if (currentSlide != "last"){
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+            $('#'+ currentSlide).next().removeClass('hidden');
+            $('#'+ currentSlide).addClass('hidden');              
+            currentSlide = $('#'+ currentSlide).next().attr('id');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
             markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
@@ -65,14 +85,67 @@ $(window).bind('mousewheel', function(event){
     }
 });
 $('.main-page__nav-link').click( function(){
+    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
     $('#'+ currentSlide).addClass('hidden');
     currentSlide = $(this).attr('data-slide');
-    $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__animated')
-    $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').removeClass('animate__fadeOutDown');
-    $('#'+ currentSlide).find('.ticker, .slide__images, .slide__title, .slide-text, .slide__button').addClass('animate__fadeInUp');
     $('#'+ currentSlide).removeClass('hidden');
+    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
     markerPos = $('[data-slide='+ currentSlide +']').position().top;
     markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
     $('.screen-nav-marker').css('right', markerPos+ 'px');
 });
+document.addEventListener('touchstart', handleTouchStart, false);
+document.addEventListener('touchmove', handleTouchMove, false);
+var xDown = null;
+var yDown = null;
+ 
+function getTouches(evt) {
+    return evt.touches || evt.originalEvent.touches; 
+}
+ 
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+ 
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+}
+ 
+var xUp = evt.touches[0].clientX;
+var yUp = evt.touches[0].clientY;
+ 
+var xDiff = xDown - xUp;
+var yDiff = yDown - yUp;
+ 
+if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+    if ( yDiff > 0 ) {
+        if (currentSlide != "last"){
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+            $('#'+ currentSlide).next().removeClass('hidden');
+            $('#'+ currentSlide).addClass('hidden');              
+            currentSlide = $('#'+ currentSlide).next().attr('id');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+            markerPos = $('[data-slide='+ currentSlide +']').position().top;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+            $('.screen-nav-marker').css('right', markerPos+ 'px');
+        } 
+    } else {
+        if (currentSlide != "welcome") {
+            $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+            $('#'+ currentSlide).addClass('hidden');
+            currentSlide = $('#'+ currentSlide).prev().attr('id');
+            $('#'+ currentSlide).removeClass('hidden');
+            $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+            markerPos = $('[data-slide='+ currentSlide +']').position().top;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+            $('.screen-nav-marker').css('right', markerPos+ 'px');
+        }
+    }
+}
 
+xDown = null;
+yDown = null;
+};

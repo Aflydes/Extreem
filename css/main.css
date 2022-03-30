@@ -31,7 +31,7 @@ body{
   position: relative;
   width: 122px;
   height: 32px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   border: 1px solid #FFFFFF;
@@ -127,13 +127,6 @@ header>a{
   text-transform: uppercase;
   z-index: 10;
 }
-.header__menu-link:hover{
-  background: linear-gradient(90deg, #C3FD4B 1.69%, #9CEEA1 98.31%);;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
 .burger {
   width: 21px;
   height: 12px;
@@ -176,15 +169,7 @@ header>a{
   margin: 42.5vh 0;
   position: relative;
 }
-.burger__menu-link{
-  position: relative;
-  font-weight: 800;
-  font-size: 64px;
-  line-height: 70px;
-  text-transform: uppercase;
-  z-index: 11;
-}
-.burger__menu-link::before{
+.burger__menu-item::before{
   font-weight: 500;
   letter-spacing: 0;
   content: counter(num,decimal-leading-zero);
@@ -194,6 +179,14 @@ header>a{
   transform: translate(-50%);
   font-size: 18px;
   line-height: 22px;
+}
+.burger__menu-link{
+  position: relative;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 70px;
+  text-transform: uppercase;
+  z-index: 11;
 }
 .burger__menu-link::after{
   content: '';
@@ -306,9 +299,13 @@ header>a{
   height: 100vh !important;
   display: flex;
   align-items: center;
+  visibility: visible;
+  opacity: 1;
 }
 .main-page__slide.hidden{
-  display: none;
+    visibility: hidden;
+    height: 0 !important;
+    opacity: 0;
 }
 .slide__content{
   width: 100%;
@@ -458,6 +455,9 @@ header>a{
 .calendar-slide{
   padding: 0 7.7% 0 5.9%;
 }
+.calendar-slide__images{
+  margin-bottom: -35px;
+}
 .calendar-slide .slide__image{
   left: 135px;
 }
@@ -487,6 +487,47 @@ header>a{
   right: 53px;
 }
 
+.link{
+  padding-right: 2px;
+  height: fit-content;
+  display: inline-block; 
+  vertical-align: bottom;
+  background-color: initial;
+  border: 0;
+  transition: opacity .3s ease;
+  overflow: hidden;
+}
+.animation-in{
+  height: fit-content;
+  transition: opacity .7s ease;
+  overflow: hidden;
+}
+.link>span,
+.animation-inner{
+  position: relative;
+  transition: transform .7s ease;
+  display: inline-block;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+.animation-inner{
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.animation-down{
+  transform: matrix(1, 0, 0, 1, 0, 100);
+}
+.link>span:before{
+  position: absolute;
+  top: 108%;
+  content: attr(data-hover);
+  transform: none;
+}
+.link:focus span, .link:hover span {
+  transition: transform .3s ease-out;
+  transform: translateY(-108%);
+}
 /*  footer  */
 .footer{
   position: fixed;
@@ -575,6 +616,9 @@ header>a{
   }
   .ticker{
     top: 10%;
+  }
+  .calendar-slide__images{
+    margin: 0;
   }
 }
 @media screen and (max-width: 1000px){

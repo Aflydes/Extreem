@@ -25,7 +25,7 @@
       </div>
     </a>
     <div class="header__menu">
-      <a href="/contacts.html" class="header__menu-link">контакты</a>
+      <a href="/contacts.html" class="header__menu-link link"><span data-hover="контакты">контакты</span></a>
       <div class="header__burger burger">
         <div class="burger__line burger__line-one"></div>
         <div class="burger__line burger__line-two"></div>
@@ -33,12 +33,12 @@
       </div>
       <div class="burger__menu">
           <ul class="burger__menu-list">
-            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Главная</a></li>
-            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Парк</a></li>
-            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Пляж</a></li>
-            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Глэмпинг</a></li>
-            <li class="burger__menu-item animate__fadeInDown"><a href="#" class="burger__menu-link">Календарь событий</a></li>
-            <li class="burger__menu-item animate__fadeInDown"><a href="/contacts.html" class="burger__menu-link">Контакты</a></li>
+            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Главная">Главная</span></a></li>
+            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Парк">Парк</span></a></li>
+            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Пляж">Пляж</span></a></li>
+            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Глэмпинг">Глэмпинг</span></a></li>
+            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Календарь событий">Календарь событий</span></a></li>
+            <li class="burger__menu-item"><a href="/contacts.html" class="burger__menu-link link"><span data-hover="Контакты">Контакты</span></a></li>
           </ul>
       </div>
     </div>
@@ -52,11 +52,11 @@
           <div class="screen-nav-marker js-screen-nav-marker" style="right: 28.65px;"></div>
         </div>
         <nav class="aside__nav main-page__nav">
-          <a href="#welcome" data-slide="welcome" class="main-page__nav-link">Главная</a>
-          <a href="#park" data-slide="park" class="main-page__nav-link">Парк</a>
-          <a href="#beach" data-slide="beach" class="main-page__nav-link">Пляж</a>
-          <a href="#glamping" data-slide="glamping" class="main-page__nav-link">Глэмпинг</a>
-          <a href="#last" data-slide="last" class="main-page__nav-link">Календарь</a>
+          <a href="#welcome" data-slide="welcome" class="main-page__nav-link link"><span data-hover="Главная">Главная</span></a>
+          <a href="#park" data-slide="park" class="main-page__nav-link link"><span data-hover="Парк">Парк</span></a>
+          <a href="#beach" data-slide="beach" class="main-page__nav-link link"><span data-hover="Пляж">Пляж</span></a>
+          <a href="#glamping" data-slide="glamping" class="main-page__nav-link link"><span data-hover="Глэмпинг">Глэмпинг</span></a>
+          <a href="#last" data-slide="last" class="main-page__nav-link link"><span data-hover="Календарь">Календарь</span></a>
       </nav>
       </div>
     </aside>
@@ -70,41 +70,43 @@
           </video>
         </div>
         <div class="welcome-slide__content slide__content">
-          <h2 class="slide__heading">Extreme
-            Крым</h2>
-          <p class="slide__text">Экосистема проектов и сервисов,
+          <h2 class="slide__heading animation-in"><span class="animation-inner ">Extreme
+            Крым</span></h2>
+          <p class="slide__text animation-in"><span class="animation-inner ">Экосистема проектов и сервисов,
             для отдыха, развития, развлечений
-            и активного образа жизни</p>
-          <a href="#" class="welcome-slide__button button">
-            <span class="button__body">шоурил</span>
-          </a>
+            и активного образа жизни</span></p>
+          <div class="animation-in">
+            <a href="#" class="welcome-slide__button button animation-inner">
+              <span class="button__body">шоурил</span>
+            </a>
+          </div>
         </div>
       </div>
 
       <div id="park" class="main-page__slide  park-slide hidden" data-name="Парк">
-        <h1 class="park__ticker ticker wow animate__fadeInUp boxHidded"><span class="ticker-text">Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк</span></h1>
+        <h1 class="park__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк</span></h1>
         <div class="park-slide__content slide__content">
-          <div class="park-slide__images slide__images wow animate__fadeInUp boxHidded ">
-            <div class="slide__image">
-              <img src="img/park.png" alt="">
+          <div class="park-slide__images slide__images ">
+            <div class="slide__image animation-in">
+              <img class="animation-inner animation-down" src="img/park.png" alt="">
             </div>
-            <div class="slide__bg">
-              <img src="img/park-bg.png" alt="">
+            <div class="slide__bg animation-in">
+              <img class="animation-inner animation-down" src="img/park-bg.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
-            <h2 class="slide__title wow animate__fadeInUp boxHidded">Парк</h2>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Лето в году бывает только один раз, и провести его нужно на EXTREME Крым</span>
-              <span class="mobile_text">Место, где отдых 
+            <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Парк</span></h2>
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Лето в году бывает только один раз, и провести его нужно на EXTREME Крым</span>
+              <span class="mobile_text animation-inner animation-down">Место, где отдых 
                 приобретает новое качество</span></p>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Парк EXTREME Крым - это место релакса, вдохновения, развития, спорта, здоровья и
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Парк EXTREME Крым - это место релакса, вдохновения, развития, спорта, здоровья и
               положительных эмоций </span>
-              <span class="mobile_text">Парк EXTREME Крым - это 
+              <span class="mobile_text animation-inner animation-down">Парк EXTREME Крым - это 
                 место релакса, вдохновения,</span>
             </p>
-            <a href="#" class="park-slide__button slide__button button wow animate__fadeInUp boxHidded">
+            <a href="#" class="park-slide__button slide__button button ">
               <span class="button__body">Перейти</span>
             </a>
           </div>
@@ -113,29 +115,29 @@
       </div>
 
       <div id="beach" class="main-page__slide  beach-slide hidden" data-name="Пляж">
-        <h1 class="beach__ticker ticker wow animate__fadeInUp boxHidded"><span class="ticker-text">Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж</span></h1>
+        <h1 class="beach__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж</span></h1>
         <div class="beach-slide__content slide__content">
-          <div class="beach-slide__images slide__images wow animate__fadeInUp boxHidded ">
-            <div class="slide__image">
-              <img src="img/beach.png" alt="">
+          <div class="beach-slide__images slide__images ">
+            <div class="slide__image animation-in">
+              <img class="animation-inner animation-down" src="img/beach.png" alt="">
             </div>
-            <div class="slide__bg">
-              <img src="img/beach-bg.png" alt="">
+            <div class="slide__bg animation-in">
+              <img class="animation-inner animation-down" src="img/beach-bg.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
-            <h2 class="slide__title wow animate__fadeInUp boxHidded">Пляж</h2>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Нега и комфорт под 
+            <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Пляж</span></h2>
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Нега и комфорт под 
                 ласковым солнцем Крыма</span>
-              <span class="mobile_text">Песчаный пляж и самая чистая вода на всём Крымском побережье</span>
+              <span class="mobile_text animation-inner animation-down">Песчаный пляж и самая чистая вода на всём Крымском побережье</span>
             </p>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Пляж EXTREME Крым входит в пятёрку лучших пляжей Крыма</span>
-              <span class="mobile_text">Пляж EXTREME Крым входит в 
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Пляж EXTREME Крым входит в пятёрку лучших пляжей Крыма</span>
+              <span class="mobile_text animation-inner animation-down">Пляж EXTREME Крым входит в 
                 пятёрку лучших пляжей Крыма</span>
             </p>
-            <a href="#" class="park-slide__button slide__button button wow animate__fadeInUp boxHidded">
+            <a href="#" class="park-slide__button slide__button button ">
               <span class="button__body">Перейти</span>
             </a>
           </div>
@@ -144,32 +146,32 @@
       </div>
 
       <div id="glamping" class="main-page__slide  glamping-slide hidden" data-name="Глэмпинг"> 
-        <h1 class="glamping__ticker ticker wow animate__fadeInUp boxHidded"><span class="ticker-text">Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг</span></h1>
+        <h1 class="glamping__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг</span></h1>
         <div class="glamping-slide__content slide__content">
-          <div class="glamping-slide__images slide__images wow animate__fadeInUp boxHidded ">
-            <div class="slide__image">
-              <img src="img/glamping.png" alt="">
+          <div class="glamping-slide__images slide__images ">
+            <div class="slide__image animation-in">
+              <img class="animation-inner animation-down" src="img/glamping.png" alt="">
             </div>
-            <div class="slide__bg">
-              <img src="img/glamping-bg.png" alt="">
+            <div class="slide__bg animation-in">
+              <img class="animation-inner animation-down" src="img/glamping-bg.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
-            <h2 class="slide__title wow animate__fadeInUp boxHidded">Глэмпинг</h2>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Незабываемый отдых с видом на закат</span>
-              <span class="mobile_text">Это возможность совместить активный отдых, дайвинг и подводную охоту с 
+            <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Глэмпинг</span></h2>
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Незабываемый отдых с видом на закат</span>
+              <span class="mobile_text animation-inner animation-down">Это возможность совместить активный отдых, дайвинг и подводную охоту с 
                 беззаботным </span>
             </p>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Глэмпинг EXTREME Крым - это возможность совместить насыщенный спортивный отдых
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Глэмпинг EXTREME Крым - это возможность совместить насыщенный спортивный отдых
                 с беззаботным времяпрепровождением всей семьёй в комфорте повышенного уровня.
                 <br><br>
                 В 2022-м году на базе данного объекта запущена франшиза по созданию и управлению глэмпингами - GLAMP INN</span>
-              <span class="mobile_text">Активный отдых, уют и 
+              <span class="mobile_text animation-inner animation-down">Активный отдых, уют и 
                 запредельные виды в одном месте</span>
             </p>
-            <a href="#" class="park-slide__button slide__button button wow animate__fadeInUp boxHidded">
+            <a href="#" class="park-slide__button slide__button button ">
               <span class="button__body">Перейти</span>
             </a>
           </div>
@@ -178,32 +180,32 @@
       </div>
 
       <div id="last" class="main-page__slide  calendar-slide hidden" data-name="Календарь">
-        <h1 class="calendar__ticker ticker wow animate__fadeInUp boxHidded"><span class="ticker-text">Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий</span></h1>
+        <h1 class="calendar__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий</span></h1>
         <div class="calendar-slide__content slide__content">
-          <div class="calendar-slide__images slide__images wow animate__fadeInUp boxHidded ">
-            <div class="slide__image">
-              <img src="img/calendar.png" alt="">
+          <div class="calendar-slide__images slide__images ">
+            <div class="slide__image animation-in">
+              <img class="animation-inner animation-down" src="img/calendar.png" alt="">
             </div>
-            <div class="slide__bg">
-              <img src="img/calendar-bg.png" alt="">
+            <div class="slide__bg animation-in">
+              <img class="animation-inner animation-down" src="img/calendar-bg.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
-            <h2 class="slide__title wow animate__fadeInUp boxHidded">Календарь
-              Событий</h2>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">События, эмоции, воспоминания, люди!</span>
-              <span class="mobile_text">Лучшие развлечения, лучшая 
+            <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Календарь
+              Событий</span></h2>
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">События, эмоции, воспоминания, люди!</span>
+              <span class="mobile_text animation-inner animation-down">Лучшие развлечения, лучшая 
                 компания, лучшая энергетика</span>
             </p>
-            <p class="slide-text wow animate__fadeInUp boxHidded">
-              <span class="desktop_text">Календарь событий - это развлекательная программа Парка EXTREME Крым - масштабные
+            <p class="slide-text animation-in">
+              <span class="desktop_text animation-inner animation-down">Календарь событий - это развлекательная программа Парка EXTREME Крым - масштабные
                 мероприятия, музыкальные сансеты, танцевальные вечеринки
                 и уникальные шоу, которые заряжают эмоциями
                 и наполняют воспоминаниями</span>
-              <span class="mobile_text">Это развлекательная программа 
+              <span class="mobile_text animation-inner animation-down">Это развлекательная программа 
                 Парка EXTREME Крым - масштабные мероприятия</span></p>
-            <a href="#" class="park-slide__button slide__button button wow animate__fadeInUp boxHidded">
+            <a href="#" class="park-slide__button slide__button button ">
               <span class="button__body">Перейти</span>
             </a>
           </div>
@@ -211,7 +213,7 @@
         </div>
       </div>
     </div>
-
+    
   </main>
   <footer class="footer">
     <div class="footer__mouse">
