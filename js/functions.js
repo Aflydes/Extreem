@@ -132,18 +132,14 @@ body.addEventListener('touchend', function (event) {
     if (xAbs > 20 || yAbs > 20) {
         if (xAbs > yAbs) {
             if (finalPoint.pageX < initialPoint.pageX) {
-                if (currentSlide != "last"){
-                    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
-                    $('#'+ currentSlide).next().removeClass('hidden');
-                    $('#'+ currentSlide).addClass('hidden');              
-                    currentSlide = $('#'+ currentSlide).next().attr('id');
-                    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
-                    markerPos = $('[data-slide='+ currentSlide +']').position().top;
-                    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
-                    $('.screen-nav-marker').css('right', markerPos+ 'px');
-                }  
+                /*СВАЙП ВЛЕВО*/
             }
             else {
+                /*СВАЙП ВПРАВО*/
+            }
+        }
+        else {
+            if (finalPoint.pageY < initialPoint.pageY) {
                 if (currentSlide != "welcome") {
                     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
                     $('#'+ currentSlide).addClass('hidden');
@@ -155,13 +151,17 @@ body.addEventListener('touchend', function (event) {
                     $('.screen-nav-marker').css('right', markerPos+ 'px');
                 } 
             }
-        }
-        else {
-            if (finalPoint.pageY < initialPoint.pageY) {
-                
-            }
             else {
-                 
+                if (currentSlide != "last"){
+                    $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
+                    $('#'+ currentSlide).next().removeClass('hidden');
+                    $('#'+ currentSlide).addClass('hidden');              
+                    currentSlide = $('#'+ currentSlide).next().attr('id');
+                    $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
+                    markerPos = $('[data-slide='+ currentSlide +']').position().top;
+                    markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+                    $('.screen-nav-marker').css('right', markerPos+ 'px');
+                }  
             }
         }
     }
