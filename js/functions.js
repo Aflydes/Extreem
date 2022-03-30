@@ -84,6 +84,7 @@ $(window).on("swipe",function(event){
         }  
     }
 });
+
 $('.main-page__nav-link').click( function(){
     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
     $('#'+ currentSlide).addClass('hidden');
@@ -94,34 +95,8 @@ $('.main-page__nav-link').click( function(){
     markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
     $('.screen-nav-marker').css('right', markerPos+ 'px');
 });
-document.addEventListener('touchstart', handleTouchStart, false);
-document.addEventListener('touchmove', handleTouchMove, false);
-var xDown = null;
-var yDown = null;
- 
-function getTouches(evt) {
-    return evt.touches || evt.originalEvent.touches; 
-}
- 
-function handleTouchStart(evt) {
-    const firstTouch = getTouches(evt)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-};
- 
-function handleTouchMove(evt) {
-    if ( ! xDown || ! yDown ) {
-        return;
-}
- 
-var xUp = evt.touches[0].clientX;
-var yUp = evt.touches[0].clientY;
- 
-var xDiff = xDown - xUp;
-var yDiff = yDown - yUp;
- 
-if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-    if ( yDiff > 0 ) {
+window.addEventListener("swipe", function(){
+    if(e.detail.dir == "up"){
         if (currentSlide != "last"){
             $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).next().removeClass('hidden');
@@ -131,8 +106,8 @@ if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
             markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
-        } 
-    } else {
+        }  
+    } else if(e.detail.dir == "down") {
         if (currentSlide != "welcome") {
             $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).addClass('hidden');
@@ -142,10 +117,6 @@ if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
             markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
-        }
+        }  
     }
-}
-
-xDown = null;
-yDown = null;
-};
+});
