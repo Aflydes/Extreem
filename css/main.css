@@ -500,7 +500,7 @@ header>a{
 }
 .animation-in{
   height: fit-content;
-  transition: opacity .7s ease;
+  transition: opacity 1.2s ease;
   overflow: hidden;
 }
 .link>span,
