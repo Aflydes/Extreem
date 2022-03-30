@@ -1,5 +1,4 @@
 let links = document.querySelectorAll('.main-page__nav-link');
-    slides = document.querySelectorAll('.wow');
     park = document.querySelector('#park');
     beach = document.querySelector('#beach');
     glamping = document.querySelector('#glamping');
@@ -123,10 +122,10 @@ $('.main-page').on("swipe", function(){
 
 var initialPoint;
 var finalPoint;
-document.addEventListener('touchstart', function (event) {
+body.addEventListener('touchstart', function (event) {
     initialPoint = event.changedTouches[0];
 }, false);
-document.addEventListener('touchend', function (event) {
+body.addEventListener('touchend', function (event) {
     finalPoint = event.changedTouches[0];
     var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
     var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
