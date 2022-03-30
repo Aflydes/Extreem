@@ -746,7 +746,9 @@ header>a{
   .slide__images {
     max-width: 250px;
   }
-  
+  .contacts-page__bg-one,.contacts-page__bg-two,.contacts-page__bg-tree{
+    display: none;
+  }
 }
 @media screen and (max-width: 500px) {
   h2{
