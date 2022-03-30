@@ -239,7 +239,6 @@ header>a{
   position: absolute;
   top: 0;
   right: 0;
-  margin-left: 4px;
   backface-visibility: hidden;
   will-change: transform;
   pointer-events: none;
@@ -506,7 +505,7 @@ header>a{
 .link>span,
 .animation-inner{
   position: relative;
-  transition: transform .7s ease;
+  transition: transform 1.7s ease;
   display: inline-block;
   font-size: inherit;
   font-weight: inherit;
@@ -710,7 +709,7 @@ header>a{
     display: none;
   }
   .mobile_text{
-    display: block;
+    display: inline-block;
   }
   .header,
   .footer{
