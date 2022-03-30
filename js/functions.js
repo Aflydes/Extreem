@@ -103,7 +103,7 @@ $('.main-page').on("swipe", function(){
             currentSlide = $('#'+ currentSlide).next().attr('id');
             $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
-            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 2.5;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
         }  
     } else if(direction  == "swipeDown") {
@@ -114,7 +114,7 @@ $('.main-page').on("swipe", function(){
             $('#'+ currentSlide).removeClass('hidden');
             $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
             markerPos = $('[data-slide='+ currentSlide +']').position().top;
-            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 8;
+            markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 2.5;
             $('.screen-nav-marker').css('right', markerPos+ 'px');
         }  
     }
