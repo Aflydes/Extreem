@@ -696,6 +696,9 @@ header>a{
   .contacts-page__description-text{
     margin-right: 30px;
   }
+  .burger__menu{
+    background: #000A3F;
+  }
 }
 @media screen and (max-width: 600px){
   .burger__menu-link{
