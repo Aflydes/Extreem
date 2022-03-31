@@ -9,7 +9,6 @@
   <!--  Assets  -->
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="assets/animate.min.css"/>
   <link rel="stylesheet" href="css/animation.css">
 
   <title>Extreme Крым | Экосистема проектов и сервисов</title>
@@ -19,7 +18,7 @@
   <header class="header">
     <a href="/">
       <div class="header__logo">
-        <img src="img/logo.png" type="image/svg+xml" class="header__logo-image"></img>
+        <object data="img/Group (1).svg" type="image/svg+xml" class="header__logo-image"></object>
         <p class="logo-title">Extreme
           Крым</p>
       </div>
@@ -33,10 +32,10 @@
       </div>
       <div class="burger__menu">
           <ul class="burger__menu-list">
-            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Главная">Главная</span></a></li>
-            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Парк">Парк</span></a></li>
+            <li class="burger__menu-item"><a href="/" class="burger__menu-link link"><span data-hover="Главная">Главная</span></a></li>
+            <li class="burger__menu-item"><a href="/park.html" class="burger__menu-link link"><span data-hover="Парк">Парк</span></a></li>
             <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Пляж">Пляж</span></a></li>
-            <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Глэмпинг">Глэмпинг</span></a></li>
+            <li class="burger__menu-item"><a href="https://ekglamping.ru/" class="burger__menu-link link"><span data-hover="Глэмпинг">Глэмпинг</span></a></li>
             <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Календарь событий">Календарь событий</span></a></li>
             <li class="burger__menu-item"><a href="/contacts.html" class="burger__menu-link link"><span data-hover="Контакты">Контакты</span></a></li>
           </ul>
@@ -49,10 +48,10 @@
     <aside class="aside-left">
       <div class="aside__content">
         <div class="screen-nav-marker-track">
-          <div class="screen-nav-marker js-screen-nav-marker" style="right: 28.65px;"></div>
+          <div class="screen-nav-marker js-screen-nav-marker" style="right: 30.34px;"></div>
         </div>
         <nav class="aside__nav main-page__nav">
-          <a href="#welcome" data-slide="welcome" class="main-page__nav-link link"><span data-hover="Главная">Главная</span></a>
+          <a href="#welcome" data-slide="welcome" class="main-page__nav-link link active"><span data-hover="Главная">Главная</span></a>
           <a href="#park" data-slide="park" class="main-page__nav-link link"><span data-hover="Парк">Парк</span></a>
           <a href="#beach" data-slide="beach" class="main-page__nav-link link"><span data-hover="Пляж">Пляж</span></a>
           <a href="#glamping" data-slide="glamping" class="main-page__nav-link link"><span data-hover="Глэмпинг">Глэмпинг</span></a>
@@ -65,8 +64,8 @@
       <div id="welcome" class="main-page__slide welcome-slide" data-name="Главная">
         <div class="video">
           <div class="welcome__video-overlay"></div>
-          <video class="welcome__video" autoplay muted loop>
-            <source src="img/video-bg.mp4" type="video/mp4">
+          <video class="welcome__video" src="img/video-bg.mp4" autoplay muted loop>
+            
           </video>
         </div>
         <div class="welcome-slide__content slide__content">
@@ -76,7 +75,7 @@
             для отдыха, развития, развлечений
             и активного образа жизни</span></p>
           <div class="animation-in">
-            <a href="#" class="welcome-slide__button button animation-inner">
+            <a href="#" class="welcome-slide__button button animation-inner animation-down">
               <span class="button__body">шоурил</span>
             </a>
           </div>
@@ -86,130 +85,108 @@
       <div id="park" class="main-page__slide  park-slide hidden" data-name="Парк">
         <h1 class="park__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк Парк</span></h1>
         <div class="park-slide__content slide__content">
-          <div class="park-slide__images slide__images ">
-            <div class="slide__image animation-in">
-              <img class="animation-inner animation-down" src="img/park.png" alt="">
-            </div>
-            <div class="slide__bg animation-in">
-              <img class="animation-inner animation-down" src="img/park-bg.png" alt="">
+          <div class="park-slide__images slide__images animation-in">
+            <div class="slide__bg animation-inner-image animation-down-image">
+              <img class="" src="img/Group 310.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
             <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Парк</span></h2>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Лето в году бывает только один раз, и провести его нужно на EXTREME Крым</span>
-              <span class="mobile_text animation-inner animation-down">Место, где отдых 
-                приобретает новое качество</span></p>
+              <span class=" animation-inner animation-down">Лето в году бывает только один раз, и провести его нужно на EXTREME Крым</span></p>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Парк EXTREME Крым - это место релакса, вдохновения, развития, спорта, здоровья и
+              <span class=" animation-inner animation-down">Парк EXTREME Крым - это место релакса, вдохновения, развития, спорта, здоровья и
               положительных эмоций </span>
-              <span class="mobile_text animation-inner animation-down">Парк EXTREME Крым - это 
-                место релакса, вдохновения,</span>
             </p>
-            <a href="#" class="park-slide__button slide__button button ">
-              <span class="button__body">Перейти</span>
-            </a>
+            <div class="animation-in">
+              <a href="#" class="park-slide__button slide__button button animation-inner animation-down">
+                <span class="button__body">Перейти</span>
+              </a>
+            </div>
           </div>
-          <div class="slide__bottom-blur"></div>
         </div>
       </div>
 
       <div id="beach" class="main-page__slide  beach-slide hidden" data-name="Пляж">
         <h1 class="beach__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж Пляж</span></h1>
         <div class="beach-slide__content slide__content">
-          <div class="beach-slide__images slide__images ">
-            <div class="slide__image animation-in">
-              <img class="animation-inner animation-down" src="img/beach.png" alt="">
-            </div>
-            <div class="slide__bg animation-in">
-              <img class="animation-inner animation-down" src="img/beach-bg.png" alt="">
+          <div class="beach-slide__images slide__images animation-in">
+            <div class="slide__bg animation-inner-image animation-down-image">
+              <img class="" src="img/Group 311.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
             <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Пляж</span></h2>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Нега и комфорт под 
+              <span class=" animation-inner animation-down">Нега и комфорт под 
                 ласковым солнцем Крыма</span>
-              <span class="mobile_text animation-inner animation-down">Песчаный пляж и самая чистая вода на всём Крымском побережье</span>
             </p>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Пляж EXTREME Крым входит в пятёрку лучших пляжей Крыма</span>
-              <span class="mobile_text animation-inner animation-down">Пляж EXTREME Крым входит в 
-                пятёрку лучших пляжей Крыма</span>
+              <span class=" animation-inner animation-down">Пляж EXTREME Крым входит в пятёрку лучших пляжей Крыма</span>
             </p>
-            <a href="#" class="park-slide__button slide__button button ">
-              <span class="button__body">Перейти</span>
-            </a>
+            <div class="animation-in">
+              <a href="#" class="park-slide__button slide__button button animation-inner animation-down">
+                <span class="button__body">Перейти</span>
+              </a>
+            </div>
           </div>
-          <div class="slide__bottom-blur"></div>
         </div>
       </div>
 
       <div id="glamping" class="main-page__slide  glamping-slide hidden" data-name="Глэмпинг"> 
         <h1 class="glamping__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг Глэмпинг</span></h1>
         <div class="glamping-slide__content slide__content">
-          <div class="glamping-slide__images slide__images ">
-            <div class="slide__image animation-in">
-              <img class="animation-inner animation-down" src="img/glamping.png" alt="">
-            </div>
-            <div class="slide__bg animation-in">
-              <img class="animation-inner animation-down" src="img/glamping-bg.png" alt="">
+          <div class="glamping-slide__images slide__images animation-in">
+            <div class="slide__bg animation-inner-image animation-down-image">
+              <img class="" src="img/Group 338.png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
             <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Глэмпинг</span></h2>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Незабываемый отдых с видом на закат</span>
-              <span class="mobile_text animation-inner animation-down">Это возможность совместить активный отдых, дайвинг и подводную охоту с 
-                беззаботным </span>
+              <span class=" animation-inner animation-down">Незабываемый отдых с видом на закат</span>
             </p>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Глэмпинг EXTREME Крым - это возможность совместить насыщенный спортивный отдых
+              <span class="animation-inner animation-down">Глэмпинг EXTREME Крым - это возможность совместить насыщенный спортивный отдых
                 с беззаботным времяпрепровождением всей семьёй в комфорте повышенного уровня.
                 <br><br>
                 В 2022-м году на базе данного объекта запущена франшиза по созданию и управлению глэмпингами - GLAMP INN</span>
-              <span class="mobile_text animation-inner animation-down">Активный отдых, уют и 
-                запредельные виды в одном месте</span>
             </p>
-            <a href="#" class="park-slide__button slide__button button ">
-              <span class="button__body">Перейти</span>
-            </a>
+            <div class="animation-in">
+              <a href="#" class="park-slide__button slide__button button animation-inner animation-down">
+                <span class="button__body">Перейти</span>
+              </a>
+            </div>
           </div>
-          <div class="slide__bottom-blur"></div>
         </div>
       </div>
 
       <div id="last" class="main-page__slide  calendar-slide hidden" data-name="Календарь">
         <h1 class="calendar__ticker ticker animation-in"><span class="ticker-text animation-inner animation-down">Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий Календарь событий</span></h1>
         <div class="calendar-slide__content slide__content">
-          <div class="calendar-slide__images slide__images ">
-            <div class="slide__image animation-in">
-              <img class="animation-inner animation-down" src="img/calendar.png" alt="">
-            </div>
-            <div class="slide__bg animation-in">
-              <img class="animation-inner animation-down" src="img/calendar-bg.png" alt="">
+          <div class="calendar-slide__images slide__images animation-in">
+            <div class="slide__bg animation-inner-image animation-down-image">
+              <img class="" src="img/Group 339 (2).png" alt="">
             </div>
           </div>
           <div class="slide__text-block">
             <h2 class="slide__title animation-in"><span class="animation-inner animation-down">Календарь
               Событий</span></h2>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">События, эмоции, воспоминания, люди!</span>
-              <span class="mobile_text animation-inner animation-down">Лучшие развлечения, лучшая 
-                компания, лучшая энергетика</span>
+              <span class="animation-inner animation-down">События, эмоции, воспоминания, люди!</span>
             </p>
             <p class="slide-text animation-in">
-              <span class="desktop_text animation-inner animation-down">Календарь событий - это развлекательная программа Парка EXTREME Крым - масштабные
+              <span class=" animation-inner animation-down">Календарь событий - это развлекательная программа Парка EXTREME Крым - масштабные
                 мероприятия, музыкальные сансеты, танцевальные вечеринки
                 и уникальные шоу, которые заряжают эмоциями
                 и наполняют воспоминаниями</span>
-              <span class="mobile_text animation-inner animation-down">Это развлекательная программа 
-                Парка EXTREME Крым - масштабные мероприятия</span></p>
-            <a href="#" class="park-slide__button slide__button button ">
-              <span class="button__body">Перейти</span>
-            </a>
+              </p>
+              <div class="animation-in">
+                <a href="#" class="park-slide__button slide__button button animation-inner animation-down">
+                  <span class="button__body">Перейти</span>
+                </a>
+              </div>
           </div>
-          <div class="slide__bottom-blur"></div>
         </div>
       </div>
     </div>

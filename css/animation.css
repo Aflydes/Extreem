@@ -8,7 +8,7 @@
     100% { transform: translateY(0); }
 }
 
-.ticker-text{
+.ticker-text-animation{
     -webkit-animation: ticker 120s infinite linear;
     -moz-animation: ticker 120s infinite linear;
     animation: ticker 120s infinite linear;
@@ -132,3 +132,23 @@
 }
 
 
+.logo-stroke-svg{
+    animation: rotating 3s infinite linear;
+}
+@keyframes rotating {
+    0%{
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(270deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
