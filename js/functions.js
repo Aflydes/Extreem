@@ -150,6 +150,9 @@ if( !$('.burger').hasClass('active')){
 }, false);
 
 $('.main-page__nav-link').click( function(){
+    if(timer) {
+        window.clearTimeout(timer);
+    }
     let clickedLink = $(this).attr('data-slide');
     $('.ticker-text').removeClass('ticker-text-animation');
     $('[data-slide='+ currentSlide +']').removeClass('active');
