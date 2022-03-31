@@ -61,7 +61,6 @@ $(window).bind('mousewheel', function(event){
             $('.ticker-text').removeClass('ticker-text-animation');
             $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
             $('#'+ currentSlide).find('.animation-inner-image').addClass("animation-down-image");
-            
             timer = setTimeout(function() {
                 $('#'+ currentSlide).next().removeClass('hidden');
                 $('#'+ currentSlide).addClass('hidden');              
@@ -151,13 +150,14 @@ if( !$('.burger').hasClass('active')){
 }, false);
 
 $('.main-page__nav-link').click( function(){
+    let clickedLink = $(this).attr('data-slide');
     $('.ticker-text').removeClass('ticker-text-animation');
     $('[data-slide='+ currentSlide +']').removeClass('active');
     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
     $('#'+ currentSlide).find('.animation-inner-image').addClass("animation-down-image");
     timer = setTimeout(function() {
         $('#'+ currentSlide).addClass('hidden');
-        currentSlide = $(this).attr('data-slide');
+        currentSlide = clickedLink;
         $('#'+ currentSlide).removeClass('hidden');
         $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
