@@ -98,7 +98,7 @@ body{
   position: fixed;
   top: 0;
   left: 0;
-  padding: 54px 60px;
+  padding: 54px 60px 30px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -116,7 +116,8 @@ header>a{
 .logo-title{
   font-weight: 600;
   font-size: 9.6px;
-  line-height: 10px;
+  line-height: 9px;
+  text-transform: capitalize;
   margin-left: 5px;
   vertical-align: middle;
   white-space: pre-line;
@@ -150,7 +151,7 @@ header>a{
 }
 .burger__menu{
   position: absolute;
-  top: -1000%;
+  top: -110vh;
   left: 0;
   width: 100%;
   height: 100%;
@@ -372,17 +373,16 @@ header>a{
 .slide__title{
   margin-bottom: 20px;
 }
-.slide-text{
-  margin-bottom: 15px;
-}
 .slide-text:first-of-type{
+  margin-bottom: 15px;
   font-weight: 500;
-  font-size: 13px;
 }
-.slide__button{
+.button-hover{
   margin-top: 25px;
 }
-
+.button-hover:hover{
+  overflow: visible;
+}
 /*  welcome-slide  */
 .welcome-slide{
   position: unset !important;
@@ -407,12 +407,11 @@ header>a{
   padding: 0 13.5%;
 }
 .park-slide__images .slide__bg{
-  width: 430px;
   text-align: center;
 }
 .park-slide .slide__images:hover .slide__bg::before{
   top: 40px;
-  left: -5px;
+  left: -20px;
   width: 110%;
   height: 110%;
   background: url(../img/park-bg-hover.png) no-repeat;
@@ -435,10 +434,13 @@ header>a{
   height: 100%;
   background: url(../img/beach-bg-hover.png) no-repeat;
 }
+.beach-slide .slide-text{
+  white-space: pre-line;
+}
 
 /*  glamping slide  */
 .glamping-slide{
-  padding: 0 12.1% 0 11.5%;
+  padding: 0 11.2% 0 11.5%;
 }
 .glamping-slide .slide__image{
   bottom: 1px;
@@ -448,17 +450,17 @@ header>a{
   max-width: 290px;
 }
 .glamping-slide .slide__images:hover .slide__bg::before{
-  top: 35px;
-  left: 35px;
-  width: 87%;
-  height: 90%;
+  top: -23px;
+  left: -24px;
+  width: 110%;
+  height: 110%;
   background: url(../img/glamping-bg-hover.png) no-repeat;
   background-size: contain;
 }
 
 /*  calendar slide  */
 .calendar-slide{
-  padding: 0 7.7% 0 5.9%;
+  padding: 0 7.1% 0 11.4%;
 }
 .calendar-slide__images{
   margin-bottom: -35px;
@@ -467,12 +469,16 @@ header>a{
   left: 135px;
 }
 .calendar-slide .slide__text-block{
-  margin-bottom: 80px;
   max-width: 344px;
 }
+.slide__images:hover{
+  overflow: visible;
+}
 .calendar-slide .slide__images:hover .slide__bg::before{
-  top: -5px;
-  left: -7px;
+  top: -23px;
+  left: -76px;
+  width: 121%;
+  height: 102%;
   background-image: url(../img/calendar-bg-hover.png);
 }
 .contacts-page__bg-one,
@@ -544,13 +550,19 @@ header>a{
 .slide__title--big {
   font-weight: 800;
   font-size: 96px;
-  line-height: 96px;
+  line-height: 100%;
   color: #F1F1F1;
 }
 
 
 /*==   Park page  ==*/
-
+.park-page .aside__nav{
+  overflow: hidden;
+}
+.park-page .main-page__nav-link{
+  margin-left: 43px;
+  min-width: fit-content;
+}
 .park-page__slide{
   padding-left: 16.6%;
   width: 100%;
@@ -559,13 +571,14 @@ header>a{
   align-items: center;
   visibility: visible;
   opacity: 1;
+  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.65) 0.03%, rgba(11, 10, 52, 0) 101.75%);
 }
 .park-page__slide.park-slide{
   position: relative;
   padding: 0 12.5% 0 16.6%;
 }
 .park-page__slide .park-slide__content{
-  padding-left: 13%;
+  padding-left: 16.75%;
 }
 .park-page__slide .slide__text-block{
   max-width: none;
@@ -573,11 +586,18 @@ header>a{
 .park-page__slide .slide__title{
   margin-bottom: 30px;
 }
+.park-page__slide .slide__title> span{
+  width: fit-content;
+  padding-right: 40px;
+}
 .park-page__slide .slide-text:first-of-type{
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 21px;
   color: #ffffff;
+}
+.park-page__slide.park-slide .slide-text{
+  white-space: pre-line;
 }
 .slide__lists{
   margin-bottom: 20px;
@@ -600,18 +620,42 @@ header>a{
   line-height: 19px;
   color: #FFFFFF;
 }
+.slide__arrows, .slide__arrows *{
+  z-index: 3;
+}
 .slide__arrow{
   cursor: pointer;
 }
 .slide__arrow-left{
   margin-right: 23px;
-  transform: rotate(180deg);
 }
+.slider__init{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+.photo-slide img{
+  height: 100vh; 
+  filter: blur(30px);
+  transition: all .7s ease-in-out;
+  max-width: none;
+  width: 100%;
+}
+.photo-slide.slick-current.slick-active img{
+  position: relative; 
+  filter: blur(0); 
+}
+.slide-text.collapsed,
+div.collapsed{
+  display: none;
+}
+
 /*   sport-slide  */
 .sport-slide{
   position: relative;
-  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.44) 0.03%, rgba(11, 10, 52, 0) 101.75%), url(../img/sport1.png);
-  background-size: 100% 100%;
 }
 .sport-slide__content{
   padding: 0 83px;
@@ -622,25 +666,29 @@ header>a{
 .sport-slide__arrows{
   margin-top: 25px;
 }
-.sport-slide .ticker{
+.sport-slide .ticker,
+.health-slide .ticker,
+.watersport-slide .ticker,
+.food-slide .ticker,
+.child-slide .ticker,
+.art-slide .ticker{
   top: auto;
   bottom: 50px;
+  transform: rotate(0);
   z-index: 1;
 }
-.sport-slide .ticker-text{
+.sport-slide .ticker-text,
+.health-slide .ticker,
+.watersport-slide .ticker-text,
+.food-slide .ticker-text,
+.child-slide .ticker-text,
+.art-slide .ticker-text{
   font-weight: 700;
   font-size: 144px;
   line-height: 176px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 75.23%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: transparent
+  text-transform: lowercase;
 }
 /*  health slide  */
-.health-slide{
-  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.44) 0.03%, rgba(11, 10, 52, 0) 101.75%), url(../img/health1.png);
-  background-size: 100% 100%;
-}
 .health-slide__content{
   padding: 0 91px;
 }
@@ -649,10 +697,6 @@ header>a{
 }
 
 /*  water sport slide  */
-.watersport-slide{
-  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.44) 0.03%, rgba(11, 10, 52, 0) 101.75%), url(../img/watersport1.png);
-  background-size: 100% 100%;
-}
 .watersport-slide__content{
   padding: 0 88px;
 }
@@ -664,17 +708,8 @@ header>a{
 }
 
 /*  food slide  */
-.food-slide{
-  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.8) 0.03%, rgba(11, 10, 52, 0) 101.75%), url(../img/food1.jpg);
-  background-size: 100% 100%;
-}
 .food-slide__content{
   padding: 0 91px;
-}
-.food-slide .slide-text{
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
 }
 .food-slide .slide-text:first-of-type{
   margin-bottom: 15px;
@@ -684,19 +719,11 @@ header>a{
 }
 
 /*  child slide  */
-.child-slide{
-  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.8) 0.03%, rgba(11, 10, 52, 0) 101.75%), url(../img/child1.jpg);
-  background-size: 100% 100%;
-}
 .child-slide__content{
   padding: 0 91px;
 }
 
 /*  art slide  */
-.art-slide{
-  background: linear-gradient(90.04deg, rgba(0, 0, 0, 0.8) 0.03%, rgba(11, 10, 52, 0) 101.75%), url(../img/art1.jpg);
-  background-size: 100% 100%;
-}
 .art-slide__content{
   padding: 0 91px;
 }
@@ -774,10 +801,8 @@ header>a{
   line-height: inherit;
   color: inherit; 
 }
-@media screen and (max-width: 1440px){
-  .welcome__video{
-    left: -20%;
-  }
+.mobile-touch-icon{
+  display: none;
 }
 @media screen  and (max-width: 1240px){
   .main-page__slide{
@@ -799,8 +824,10 @@ header>a{
   .calendar-slide__images{
     margin: 0;
   }
-  .welcome__video{
-    left: -40%;
+  .park-page__slide.park-slide .slide__images:hover .slide__bg::before{
+    top: 34px;
+    left: -16px;
+    background-size: contain;
   }
 }
 
@@ -828,9 +855,6 @@ header>a{
     .slide__text-block{
       margin: 0 0 0 20px !important;
     }
-    .welcome__video{
-      left: -70%;
-    }
     .main-page__slide{
       margin: 0 auto;
       padding: 0;
@@ -852,6 +876,27 @@ header>a{
     }
     .park-slide__images .slide__bg{
       width: auto;
+    }
+    .park-page__slide{
+      padding: 0;
+      background-size: cover;
+      background-position-x: 50%;
+    }
+    .park-page__slide.park-slide{
+      padding: 0;
+    }
+    .park-page__slide .park-slide__content{
+      padding: 0;
+    }
+    .park-page__slide:not(:first-of-type) .slide__content{
+      justify-content: flex-start;
+      align-items: start;
+    }
+    .park-page__slide .slide__text-block{
+      margin: 0 !important;
+    }
+    .slide__title--big{
+      font-size: 76px;
     }
 }
 @media screen and (max-width: 768px){
@@ -885,16 +930,63 @@ header>a{
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
   }
-  .welcome__video{
-    left: -100%;
-  }
   .burger__menu-item{
     margin: 38.5vh 0;
   }
-  
+  .footer__mouse{
+    display: none;
+  }
+  .mobile-touch-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .touch-icon{
+    width: 16.5px;
+    height: 16.5px;
+    border-radius: 50%;
+    background: #ffffff54;
+  }
+  .touch__inner{
+    position: absolute;
+    width: 8.5px;
+    height: 8.5px;
+    border-radius: 50%;
+    background: #ffffffe6;
+  }
+  .slide__lists{
+    flex-wrap: wrap;
+  }
+  .park-page__slide:not(:first-of-type) .slide__content{
+    padding: 0 50px;
+  }
+  .park-page__slide{
+    background-position: 65%;
+  }
+  .park-page__slide.park-slide{
+    padding: 0 30px;
+  }
+  .slide__title--big{
+    position: relative;
+  }
+  .slide__title--big span::before{
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 23px;
+    height: 15px;
+    background: url(../img/Arrow\ -spoiler.png);
+  }
+  .slide__title--big.collapsed span::before{
+    transform: rotate(180deg);
+    transition: transform 0.5s ease-in-out;
+  }
 }
 @media screen and (max-width: 600px){
   .welcome__video{
+    top: 0;
     left: 0;
   }
   .burger__menu-link{
@@ -920,7 +1012,7 @@ header>a{
     left: -32%;
     width: 200%;
   }
-  .ticker-text{
+  .main-page__slide .ticker-text{
     animation: none !important;
   }
   .main-page__slide{
@@ -935,6 +1027,30 @@ header>a{
   }
   .contacts-page__bg-one,.contacts-page__bg-two,.contacts-page__bg-tree{
     display: none;
+  }
+  .logo-stroke{
+    display: none;
+  }
+  .sport-slide .ticker, 
+  .health-slide .ticker, 
+  .watersport-slide .ticker, 
+  .food-slide .ticker, 
+  .child-slide .ticker, 
+  .art-slide .ticker{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    bottom: 52px;
+  }
+  .sport-slide .ticker-text, 
+  .health-slide .ticker, 
+  .watersport-slide .ticker-text, 
+  .food-slide .ticker-text, 
+  .child-slide .ticker-text, 
+  .art-slide .ticker-text{
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
   }
 }
 @media screen and (max-width: 500px) {
@@ -965,7 +1081,7 @@ header>a{
     line-height: 13px;
   }
   .slide__button{
-    margin-top: 20px;
+    margin-top: 7px;
   }
   .calendar-slide .slide__title{
     font-size: 32px;
@@ -1000,6 +1116,33 @@ header>a{
     font-size: 12px;
     line-height: 22px;
   }
+  .park-page__slide:not(:first-of-type) .slide__content{
+    padding: 0 19px;
+  }
+  .slide__title--big{
+    font-size: 54px;
+  }
+  .park-page__slide .slide-text:first-of-type{
+    font-size: 11px;
+    line-height: 19px;
+  }
+  .park-page__slide .slide-text{
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 19px;
+  }
+  .slide__list-item{
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 17px;
+  }
+  .photo-slide img{
+    width: 200%;
+    right: 60%;
+  }
+  .slide__title--big span::before{
+    top: 18px;
+  }
 }
 @media screen and (max-width: 400px) {
   .glamping-slide .slide__image{
@@ -1011,5 +1154,11 @@ header>a{
   }
   .park-slide .slide__images{
     max-width: 176px;
+  }
+  .slide__title--big{
+    font-size: 48px;
+  }
+  .slide__title--big span::before{
+    top: 14px;
   }
 }

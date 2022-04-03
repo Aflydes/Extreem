@@ -48,6 +48,11 @@ $(window).bind('mousewheel', function(event){
                 $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
                 $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                 $('.ticker-text').addClass('ticker-text-animation');
+
+                if($(window).height() < 920 && currentSlide === 'watersport'){
+                    $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+                }
+
                 markerPos = $('[data-slide='+ currentSlide +']').position().top;
                 markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 2.5;
                 $('.screen-nav-marker').css('right', markerPos+ 'px');
@@ -68,11 +73,17 @@ $(window).bind('mousewheel', function(event){
                 $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
                 $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                 $('.ticker-text').addClass('ticker-text-animation');
+
+                if($(window).height() < 920 && currentSlide === 'watersport'){
+                    $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 230, 0)');
+                }
+
                 markerPos = $('[data-slide='+ currentSlide +']').position().top;
                 markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 2.5;
                 $('.screen-nav-marker').css('right', markerPos+ 'px');
                 $('[data-slide='+ currentSlide +']').addClass('active');
-            }, 700);
+                
+            }, 700);            
         }  
     }
  }
@@ -117,6 +128,11 @@ if( !$('.burger').hasClass('active')){
                         $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
                         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                         $('.ticker-text').addClass('ticker-text-animation');
+
+                        if($(window).height() < 920 && currentSlide === 'watersport'){
+                            $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 230, 0)');
+                        }
+
                         markerPos = $('[data-slide='+ currentSlide +']').position().top;
                         markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 2.5;
                         $('.screen-nav-marker').css('right', markerPos+ 'px');
@@ -137,6 +153,11 @@ if( !$('.burger').hasClass('active')){
                         $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
                         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                         $('.ticker-text').addClass('ticker-text-animation');
+
+                        if($(window).height() < 920 &&  currentSlide === 'watersport'){
+                           $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+                        }
+
                         markerPos = $('[data-slide='+ currentSlide +']').position().top;
                         markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 2.5;
                         $('.screen-nav-marker').css('right', markerPos + 'px');
@@ -164,8 +185,21 @@ $('.main-page__nav-link').click( function(){
         $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
         $('.ticker-text').addClass('ticker-text-animation');
+        if($(window).height() < 920 && (currentSlide === 'watersport' || currentSlide === 'food' || currentSlide === 'child' || currentSlide === 'last')){
+            $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 230, 0)');
+        } else{
+            $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+        }
         markerPos = $('[data-slide='+ currentSlide +']').position().top;
         markerPos = markerPos + $('[data-slide='+ currentSlide +']').width()/2 - 1.5;
         $('.screen-nav-marker').css('right', markerPos + 'px');
         $('[data-slide='+ currentSlide +']').addClass('active');
+});
+
+
+$('.slide__title--big').click( function(){
+    if ($(window).width < 769){
+        $(this).toggleClass('collapsed');
+        $(this).next().toggleClass("collapsed");
+    }
 });

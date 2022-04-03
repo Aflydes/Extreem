@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="assets/slick/slick.css">
 
   <title>Extreme Крым | Экосистема проектов и сервисов</title>
 </head>
@@ -18,13 +19,13 @@
   <header class="header">
     <a href="/">
       <div class="header__logo">
-        <object data="img/Group (1).svg" type="image/svg+xml" class="header__logo-image"></object>
+        <img src="img/logo.png" type="image/svg+xml" class="header__logo-image">
         <p class="logo-title">Extreme
           Крым</p>
       </div>
     </a>
     <div class="header__menu">
-      <a href="/contacts.html" class="header__menu-link link"><span data-hover="контакты">контакты</span></a>
+      <a href="contacts.html" class="header__menu-link link"><span data-hover="контакты">контакты</span></a>
       <div class="header__burger burger">
         <div class="burger__line burger__line-one"></div>
         <div class="burger__line burger__line-two"></div>
@@ -33,7 +34,7 @@
       <div class="burger__menu">
           <ul class="burger__menu-list">
             <li class="burger__menu-item"><a href="/" class="burger__menu-link link"><span data-hover="Главная">Главная</span></a></li>
-            <li class="burger__menu-item"><a href="/park.html" class="burger__menu-link link"><span data-hover="Парк">Парк</span></a></li>
+            <li class="burger__menu-item"><a href="park.html" class="burger__menu-link link"><span data-hover="Парк">Парк</span></a></li>
             <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Пляж">Пляж</span></a></li>
             <li class="burger__menu-item"><a href="https://ekglamping.ru/" class="burger__menu-link link"><span data-hover="Глэмпинг">Глэмпинг</span></a></li>
             <li class="burger__menu-item"><a href="#" class="burger__menu-link link"><span data-hover="Календарь событий">Календарь событий</span></a></li>
@@ -76,153 +77,264 @@
                 </div>
                 <div class="slide__text-block">
                     <h2 class="slide__title animation-in"><span class="animation-inner">Парк</span></h2>
-                    <p class="slide-text animation-in">
-                        <span class=" animation-inner ">Лето в году бывает только один раз, и провести его нужно на EXTREME
-                            Крым</span>
-                    </p>
-                    <p class="slide-text animation-in">
-                        <span class=" animation-inner ">Парк EXTREME Крым - это место релакса, вдохновения, развития,
-                            спорта, здоровья и
-                            положительных эмоций </span>
-                    </p>
-                    <div class="animation-in">
-                        <a href="#" class="park-slide__button slide__button button animation-inner ">
-                            <span class="button__body">Перейти</span>
+                    <p class="slide-text animation-in"><span class=" animation-inner ">Лето в году бывает только один раз, 
+                            и провести его нужно на Extreme Крым</span></p>
+                    <p class="slide-text animation-in"><span class=" animation-inner ">Парк Extreme Крым - это место релакса, 
+                            вдохновения, развития, спорта, здоровья и
+                            положительных эмоций </span></p>
+                    <div class="animation-in button-hover">
+                        <a href="#" class="park-slide__button slide__button button animation-inner">
+                          <span class="button__body">Шоурил</span>
                         </a>
-                    </div>
+                      </div>
                 </div>
             </div>
         </div>
     
         <div id="sport" class="park-page__slide  sport-slide hidden" data-name="Спорт">
+            <div class="slider__init">
+                <div class="sport-slide__photo-slider photo-slider">
+                    <div class="photo-slide">
+                      <img src="img/sport1.png" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/sport2.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/sport3.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/sport4.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="img/sport5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
             <h1 class="sport__ticker ticker animation-in">
                 <span class="ticker-text animation-inner animation-down ticker-text-animation">Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге 
                     Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге</span>
             </h1>
             <div class="sport-slide__content slide__content">
                 <div class="slide__text-block">
-                    <h2 class="slide__title slide__title--big animation-in"><span class="animation-inner animation-down">СПОРТ</span></h2>
-                    <p class="slide-text animation-in">
-                        <span class="animation-inner animation-down">Парк оснащен спортивными объектами и снаряжением более чем для 20 видов спорта</span>
-                    </p>
-                    <div class="slide__lists animation-in">
-                        <ul class="slide__list animation-inner animation-down">
-                            <li class="slide__list-item">Слеклайн-площадка</li>
-                            <li class="slide__list-item">Пляжный стадион</li>
-                            <li class="slide__list-item">Паркур-парк</li>
-                            <li class="slide__list-item">Скейтпарк</li>
-                        </ul>
-                        <ul class="slide__list animation-inner animation-down">
-                            <li class="slide__list-item">Тренажерный зал под открытым небом</li>
-                            <li class="slide__list-item">Площадка для групповых тренеровок</li>
-                            <li class="slide__list-item">по фитнесу и йоге</li>
-                        </ul>
+                    <h2 class="slide__title slide__title--big animation-in"><span class="animation-inner animation-down">Спорт</span></h2>
+                    <div>
+                        <p class="slide-text animation-in">
+                            <span class="animation-inner animation-down">Парк оснащен спортивными объектами и снаряжением более чем для 20 видов спорта</span>
+                        </p>
+                        <div class="slide__lists animation-in">
+                            <ul class="slide__list animation-inner animation-down">
+                                <li class="slide__list-item">Слеклайн-площадка</li>
+                                <li class="slide__list-item">Пляжный стадион</li>
+                                <li class="slide__list-item">Паркур-парк</li>
+                                <li class="slide__list-item">Скейтпарк</li>
+                            </ul>
+                            <ul class="slide__list animation-inner animation-down">
+                                <li class="slide__list-item">Тренажерный зал под открытым небом</li>
+                                <li class="slide__list-item">Площадка для групповых тренеровок</li>
+                                <li class="slide__list-item">по фитнесу и йоге</li>
+                            </ul>
+                        </div>
+                        <p class="slide-text animation-in">
+                            <span class="animation-inner animation-down">Парк Extreme Крым - это место релакса, вдохновения, развития,
+                                спорта, здоровья и
+                                положительных эмоций </span>
+                        </p>
                     </div>
-                    <p class="slide-text animation-in">
-                        <span class="animation-inner animation-down">Парк EXTREME Крым - это место релакса, вдохновения, развития,
-                            спорта, здоровья и
-                            положительных эмоций </span>
-                    </p>
                     <div class="slide__arrows sport-slide__arrows animation-in">
                         <svg class="slide__arrow slide__arrow-left sport-slide__arrow-left animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-left></use>
                         </svg>
                         <svg class="slide__arrow slide__arrow-right sport-slide__arrow-right animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-right></use>
                         </svg>
                     </div>
                 </div>
             </div>
+            <div class="logo-stroke">
+                <svg class="logo-stroke-svg" width="77px" height="77px">
+                    <use xlink:href=img/icons.svg#logoStroke></use>
+                  </svg>
+            </div>
         </div>
     
         <div id="health" class="park-page__slide  health-slide hidden" data-name="ЗДОРОВЬЕ">
+            <div class="slider__init">
+                <div class="health-slide__photo-slider photo-slider">
+                    <div class="photo-slide">
+                        <img src="img/health1.png" alt="">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="img/health2.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="img/health3.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="img/health4.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                        <img src="img/health5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
             <h1 class="health__ticker ticker animation-in">
                 <span class="ticker-text animation-inner animation-down ticker-text-animation">Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге 
                 Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге</span></h1>
             <div class="health-slide__content slide__content">
                 <div class="slide__text-block">
-                    <h2 class="slide__title animation-in slide__title--big"><span class="animation-inner animation-down">ЗДОРОВЬЕ</span></h2>
+                    <h2 class="slide__title animation-in slide__title--big"><span class="animation-inner animation-down">Здоровье</span></h2>
                     <p class="slide-text animation-in">
                         <span class="animation-inner animation-down">Тренажерный зал под открытым небом, открытые фитнес-тренировки для всех желающих, 
                             более 10 спортивных локаций, йога-сеансы, массаж</span>
                     </p>
                     <div class="slide__arrows health-slide__arrows animation-in">
                         <svg class="slide__arrow slide__arrow-left health-slide__arrow-left animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-left></use>
                         </svg>
                         <svg class="slide__arrow slide__arrow-right health-slide__arrow-right animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-right></use>
                         </svg>
                     </div>
                 </div>
             </div>
+            <div class="logo-stroke">
+                <svg class="logo-stroke-svg" width="77px" height="77px">
+                    <use xlink:href=img/icons.svg#logoStroke></use>
+                  </svg>
+            </div>
         </div>
 
         <div id="watersport" class="park-page__slide  watersport-slide hidden" data-name="Спорт на воде">
+            <div class="slider__init">
+                <div class="watersport-slide__photo-slider photo-slider">
+                    <div class="photo-slide">
+                      <img src="img/watersport1.png" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport2.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport3.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport4.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport5.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport6.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport7.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/watersport8.jpg" alt="">
+                    </div>
+                </div>
+            </div>
             <h1 class="watersport__ticker ticker animation-in">
                 <span class="ticker-text animation-inner animation-down ticker-text-animation">Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге 
                 Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге</span></h1>
             <div class="watersport-slide__content slide__content">
                 <div class="slide__text-block">
-                    <h2 class="slide__title slide__title--big animation-in"><span class="animation-inner animation-down">СПОРТ 
-                        НА ВОДЕ</span></h2>
-                    <p class="slide-text animation-in">
-                        <span class="animation-inner animation-down">В рамках работы Центра водных видов спорта гости могут получить 
-                            квалиффикацированные уроки от инструкторов в направлениях:</span>
-                    </p>
-                    <div class="slide__lists animation-in">
-                        <ul class="slide__list animation-inner animation-down">
-                            <li class="slide__list-item">виндсерфинг</li>
-                            <li class="slide__list-item">кайтсерфинг</li>
-                            <li class="slide__list-item">гидроцикл</li>
-                            <li class="slide__list-item">флайборд</li>
-                        </ul>
-                        <ul class="slide__list animation-inner animation-down">
-                            <li class="slide__list-item">дайвинг</li>
-                            <li class="slide__list-item">каякинг</li>
-                            <li class="slide__list-item">сап-серфинг</li>
-                        </ul>
+                    <h2 class="slide__title slide__title--big animation-in"><span class="animation-inner animation-down">Спорт 
+                        на воде</span></h2>
+                    <div>
+                        <p class="slide-text animation-in">
+                            <span class="animation-inner animation-down">В рамках работы Центра водных видов спорта гости могут получить 
+                                квалиффикацированные уроки от инструкторов в направлениях:</span>
+                        </p>
+                        <div class="slide__lists animation-in">
+                            <ul class="slide__list animation-inner animation-down">
+                                <li class="slide__list-item">виндсерфинг</li>
+                                <li class="slide__list-item">кайтсерфинг</li>
+                                <li class="slide__list-item">гидроцикл</li>
+                                <li class="slide__list-item">флайборд</li>
+                            </ul>
+                            <ul class="slide__list animation-inner animation-down">
+                                <li class="slide__list-item">дайвинг</li>
+                                <li class="slide__list-item">каякинг</li>
+                                <li class="slide__list-item">сап-серфинг</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="slide__arrows watersport-slide__arrows animation-in">
                         <svg class="slide__arrow slide__arrow-left watersport-slide__arrow-left animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-left></use>
                         </svg>
                         <svg class="slide__arrow slide__arrow-right watersport-slide__arrow-right animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-right></use>
                         </svg>
                     </div>
                 </div>
             </div>
+            <div class="logo-stroke">
+                <svg class="logo-stroke-svg" width="77px" height="77px">
+                    <use xlink:href=img/icons.svg#logoStroke></use>
+                  </svg>
+            </div>
         </div>
     
         <div id="food" class="park-page__slide  food-slide hidden" data-name="Еда">
+            <div class="slider__init">
+                <div class="food-slide__photo-slider photo-slider">
+                    <div class="photo-slide">
+                      <img src="img/food1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
             <h1 class="food__ticker ticker animation-in">
                 <span class="ticker-text animation-inner ticker-text-animation">Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге 
                 Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге</span></h1>
             <div class="food-slide__content slide__content">
                 <div class="slide__text-block">
-                    <h2 class="slide__title animation-in slide__title--big"><span class="animation-inner animation-down">ЕДА</span></h2>
-                    <p class="slide-text animation-in">
-                        <span class="animation-inner animation-down">На территории парка расположены разнообразные гастрономические проекты с широким выбором блюд и напитков. 
-                            Меню удовлетворит любого гурмана.</span>
-                    </p>
-                    <p class="slide-text animation-in">
-                        <span class="animation-inner animation-down">Внутренняя платежная система позволяет 
-                            не использовать наличные средства</span>
-                    </p>
+                    <h2 class="slide__title animation-in slide__title--big"><span class="animation-inner animation-down">Еда</span></h2>
+                    <div>
+                        <p class="slide-text animation-in">
+                            <span class="animation-inner animation-down">На территории парка расположены разнообразные гастрономические проекты с широким выбором блюд и напитков. 
+                                Меню удовлетворит любого гурмана.</span>
+                        </p>
+                        <p class="slide-text animation-in">
+                            <span class="animation-inner animation-down">Внутренняя платежная система позволяет 
+                                не использовать наличные средства</span>
+                        </p>
+                    </div>
                     <div class="slide__arrows food-slide__arrows animation-in">
                         <svg class="slide__arrow slide__arrow-left food-slide__arrow-left animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-left></use>
                         </svg>
                         <svg class="slide__arrow slide__arrow-right food-slide__arrow-right animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-right></use>
                         </svg>
                     </div>
                 </div>
             </div>
+            <div class="logo-stroke">
+                <svg class="logo-stroke-svg" width="77px" height="77px">
+                    <use xlink:href=img/icons.svg#logoStroke></use>
+                  </svg>
+            </div>
         </div>
 
         <div id="child" class="park-page__slide  child-slide hidden" data-name="Детям">
+            <div class="slider__init">
+                <div class="child-slide__photo-slider photo-slider">
+                    <div class="photo-slide">
+                      <img src="img/child1.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/child2.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/child3.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/child4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
             <h1 class="child__ticker ticker animation-in">
                 <span class="ticker-text animation-inner animation-down ticker-text-animation">Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге 
                 Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге</span></h1>
@@ -236,17 +348,41 @@
                     </p>
                     <div class="slide__arrows child-slide__arrows animation-in">
                         <svg class="slide__arrow slide__arrow-left child-slide__arrow-left animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-left></use>
                         </svg>
                         <svg class="slide__arrow slide__arrow-right child-slide__arrow-right animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-right></use>
                         </svg>
                     </div>
                 </div>
             </div>
+            <div class="logo-stroke">
+                <svg class="logo-stroke-svg" width="77px" height="77px">
+                    <use xlink:href=img/icons.svg#logoStroke></use>
+                  </svg>
+            </div>
         </div>
 
         <div id="last" class="park-page__slide  art-slide hidden" data-name="Арт-объекты">
+            <div class="slider__init">
+                <div class="art-slide__photo-slider photo-slider">
+                    <div class="photo-slide">
+                      <img src="img/art1.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/art2.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/art3.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/art4.jpg" alt="">
+                    </div>
+                    <div class="photo-slide">
+                      <img src="img/art5.jpg" alt="">
+                    </div>
+                </div>
+            </div>
             <h1 class="art__ticker ticker animation-in">
                 <span class="ticker-text animation-inner animation-down ticker-text-animation">Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге 
                 Слеклайн-площадка Тренажерный зал Площадка для групповых тренеровок по фитнесу и йоге</span></h1>
@@ -254,26 +390,26 @@
                 <div class="slide__text-block">
                     <h2 class="slide__title animation-in slide__title--big"><span class="animation-inner animation-down">Арт-объекты</span></h2>
                     <p class="slide-text animation-in">
-                        <span class="animation-inner animation-down">ВСЁ ДЛЯ ИДЕАЛЬНОГО ИНСТАГРАМА
+                        <span class="animation-inner animation-down">Всё для идеального инстаграмма
                             На территории есть арт-объекты, фото-зоны и инсталляции.</span>
                     </p>
                     <div class="slide__arrows art-slide__arrows animation-in">
                         <svg class="slide__arrow slide__arrow-left art-slide__arrow-left animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-left></use>
                         </svg>
                         <svg class="slide__arrow slide__arrow-right art-slide__arrow-right animation-inner animation-down" width="39px" height="39px">
-                            <use xlink:href=img/icons.svg#arrow></use>
+                            <use xlink:href=img/icons.svg#arrow-right></use>
                         </svg>
                     </div>
                 </div>
             </div>
+            <div class="logo-stroke">
+                <svg class="logo-stroke-svg" width="77px" height="77px">
+                    <use xlink:href=img/icons.svg#logoStroke></use>
+                  </svg>
+            </div>
         </div>
 
-    </div>
-    <div class="logo-stroke">
-        <svg class="logo-stroke-svg" width="77px" height="77px">
-            <use xlink:href=img/icons.svg#logoStroke></use>
-          </svg>
     </div>
 
   </main>
@@ -282,6 +418,10 @@
       <svg class="mouse-icon" width="10px" height="17px">
         <use xlink:href=img/icons.svg#mouse></use>
       </svg>
+    </div>
+    <div class="mobile-touch-icon">
+      <div class="touch-icon"></div>
+      <div class="touch__inner"></div>
     </div>
     <div class="footer__socials">
       <a href="#" class="footer__social-link">
@@ -303,6 +443,8 @@
   </footer>
   
   <script src="assets/jquery-3.6.0.min.js"></script>
+  <script src="assets/slick/slick.min.js"></script>
+  <script src="js/sliders.js"></script>
   <script src="js/functions.js"></script>
   
 

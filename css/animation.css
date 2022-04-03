@@ -130,8 +130,6 @@
         transform: translate3d(0, -7px, 0) rotate(135deg);
     }
 }
-
-
 .logo-stroke-svg{
     animation: rotating 3s infinite linear;
 }
@@ -150,5 +148,56 @@
     }
     100%{
         transform: rotate(360deg);
+    }
+}
+.touch-icon{
+    animation:touchIconMove 2s infinite linear;
+}
+.touch__inner{
+    animation: touchInnerMove 2s infinite linear;
+}
+@keyframes touchIconMove{
+    0%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+    25%{
+        transform: matrix(1, 0, 0, 1, 0, -10);
+    }
+    50%{
+        transform: matrix(1, 0, 0, 1, 0, -20);
+        opacity: 1;
+    }
+    75%{
+        transform: matrix(1, 0, 0, 1, 0, -20);
+        opacity: 0;
+    }
+    100%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 0;
+    }
+}
+@keyframes touchInnerMove {
+    0%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+    }
+    12.5%{
+        transform: matrix(1, 0, 0, 1, 0, -10);
+    }
+    25%{
+        transform: matrix(1, 0, 0, 1, 0, -15);
+    }
+    50%{
+        transform: matrix(1, 0, 0, 1, 0, -15);
+        opacity: 0;
+    }
+    75%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 0;
+    }
+    100%{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 0;
     }
 }
