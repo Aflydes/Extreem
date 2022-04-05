@@ -152,6 +152,7 @@
 }
 .touch-icon{
     animation:touchIconMove 2s infinite linear;
+    display: none;
 }
 .touch__inner{
     animation: touchInnerMove 2s infinite linear;
@@ -179,25 +180,31 @@
 }
 @keyframes touchInnerMove {
     0%{
-        transform: matrix(1, 0, 0, 1, 0, 0);
+        transform: matrix(1, 0, 0, 1, 0, -8);
         opacity: 1;
     }
     12.5%{
-        transform: matrix(1, 0, 0, 1, 0, -10);
+        transform: matrix(1, 0, 0, 1, 0, -4);
     }
     25%{
-        transform: matrix(1, 0, 0, 1, 0, -15);
+        transform: matrix(1, 0, 0, 1, 0, 0);
+    }
+    37.5%{
+        transform: matrix(1, 0, 0, 1, 0, 4);
     }
     50%{
-        transform: matrix(1, 0, 0, 1, 0, -15);
-        opacity: 0;
+        transform: matrix(1, 0, 0, 1, 0, 8);
+    }
+    62.5%{
+        transform: matrix(1, 0, 0, 1, 0, 4);
     }
     75%{
         transform: matrix(1, 0, 0, 1, 0, 0);
-        opacity: 0;
+    }
+    87.5%{
+        transform: matrix(1, 0, 0, 1, 0, -4);
     }
     100%{
-        transform: matrix(1, 0, 0, 1, 0, 0);
-        opacity: 0;
+        transform: matrix(1, 0, 0, 1, 0, -8);
     }
 }

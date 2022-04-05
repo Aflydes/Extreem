@@ -10,12 +10,20 @@ burger.addEventListener('click', () => {
     burger.classList.remove('_lock-animation');
     body.classList.toggle('lock-scroll');
 });
-
-if($(window).width() < 540){
-    $('.welcome__video').attr("src", "img/mobile-video.mp4")
-}
-
-
+$(document).ready(function(){
+    $( window ).resize()
+});
+$(window).resize(function() {
+    if ($(window).width() < 450 ) {
+        $('[data-mobile]').each(function(){
+            let dataSrc = $(this).attr('data-mobile');
+            $(this).attr('src', dataSrc);
+        });
+    }
+    if($(window).width() < 600){
+        $('.welcome__video').attr("src", "img/mobile-video.mp4");
+    } else  $('.welcome__video').attr("src", "img/video-bg.mp4");
+});
 /**/
 $( document ).on( "mousemove", function( event ) {
     let pageX = event.pageX;
@@ -29,7 +37,7 @@ $( document ).on( "mousemove", function( event ) {
 var timer;
 var currentSlide = 'welcome';
 
-$(window).bind('mousewheel', function(event){
+$(window).bind('wheel', function(event){
  if( !$('.burger').hasClass('active')){
     if(timer) {
         window.clearTimeout(timer);
@@ -49,7 +57,7 @@ $(window).bind('mousewheel', function(event){
                 $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                 $('.ticker-text').addClass('ticker-text-animation');
 
-                if($(window).height() < 920 && currentSlide === 'watersport'){
+                if(currentSlide === 'health'){
                     $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
                 }
 
@@ -61,7 +69,7 @@ $(window).bind('mousewheel', function(event){
         }   
     }
     else {
-        if (currentSlide != "last"){
+        if (currentSlide != "last" && currentSlide != "navigation"){
             $('[data-slide='+ currentSlide +']').removeClass('active');
             $('.ticker-text').removeClass('ticker-text-animation');
             $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
@@ -74,7 +82,7 @@ $(window).bind('mousewheel', function(event){
                 $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                 $('.ticker-text').addClass('ticker-text-animation');
 
-                if($(window).height() < 920 && currentSlide === 'watersport'){
+                if((currentSlide === 'watersport' || currentSlide === 'food' || currentSlide === 'child' || currentSlide === 'art')){
                     $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 230, 0)');
                 }
 
@@ -116,7 +124,7 @@ if( !$('.burger').hasClass('active')){
         }
         else {
             if (finalPoint.pageY < initialPoint.pageY) {
-                if (currentSlide != "last"){
+                if (currentSlide != "last" && currentSlide != "navigation"){
                     $('.ticker-text').removeClass('ticker-text-animation');
                     $('[data-slide='+ currentSlide +']').removeClass('active');
                     $('#'+ currentSlide).find('.animation-inner').addClass("animation-down");
@@ -129,7 +137,7 @@ if( !$('.burger').hasClass('active')){
                         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                         $('.ticker-text').addClass('ticker-text-animation');
 
-                        if($(window).height() < 920 && currentSlide === 'watersport'){
+                        if((currentSlide === 'watersport' || currentSlide === 'food' || currentSlide === 'child' || currentSlide === 'art')){
                             $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 230, 0)');
                         }
 
@@ -154,7 +162,7 @@ if( !$('.burger').hasClass('active')){
                         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
                         $('.ticker-text').addClass('ticker-text-animation');
 
-                        if($(window).height() < 920 &&  currentSlide === 'watersport'){
+                        if(currentSlide === 'health'){
                            $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
                         }
 
@@ -185,7 +193,7 @@ $('.main-page__nav-link').click( function(){
         $('#'+ currentSlide).find('.animation-inner').removeClass("animation-down");
         $('#'+ currentSlide).find('.animation-inner-image').removeClass("animation-down-image");
         $('.ticker-text').addClass('ticker-text-animation');
-        if($(window).height() < 920 && (currentSlide === 'watersport' || currentSlide === 'food' || currentSlide === 'child' || currentSlide === 'last')){
+        if((currentSlide === 'watersport' || currentSlide === 'food' || currentSlide === 'child' || currentSlide === 'art' || currentSlide ==='navigation')){
             $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 230, 0)');
         } else{
             $('.main-page__nav-link').css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
@@ -197,9 +205,9 @@ $('.main-page__nav-link').click( function(){
 });
 
 
-$('.slide__title--big').click( function(){
-    if ($(window).width < 769){
+$('.slide__title--big, .full-page__slide-heading').click( function(){
+    if ($(window).width() < 769){
         $(this).toggleClass('collapsed');
-        $(this).next().toggleClass("collapsed");
+        $(this).next('div, ul, p').toggleClass("collapsed");
     }
 });
